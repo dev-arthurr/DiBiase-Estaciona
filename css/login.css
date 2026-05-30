@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  background: #112239;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 40px;
+  color: #ffffff;
+  position: relative;
+}
+
+.left-panel-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 15px;
+  position: relative;
+}
+
+.left-panel-logo img {
+  max-height: 120px;
+  width: auto;
+}
+
+.banner-title {
+  font-family: "Inter", sans-serif; /* Fonte moderna sem serifa */
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+.banner-subtitle {
+  font-size: 16px;
+  color: #94a3b8;
+  max-width: 400px;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* LADO DIREITO */
+.right-panel {
+  flex: 1.2; /* Ligeiramente mais largo */
+  background: #f8fafc;
+  border-top-left-radius: 40px; /* Borda curva acentuada para divisa flex */
+  border-bottom-left-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container-right {
+  margin: auto;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-title h2 {
+  font-family: "Inter", sans-serif; /* Fonte moderna sem serifa */
+  font-size: 34px;
+  font-weight: 800;
+  color: #112239;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.auth-title p {
+  color: #64748b;
+  font-size: 15px;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  text-align: center; /* Subtítulo centralizado */
+}
+
+.control-label {
+  font-size: 13px !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px;
+  display: block;
+  text-align: left !important;
+}
+
+.form-control.custom-input {
+  height: 50px;
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 15px;
+  box-shadow: none !important;
+  transition: all 0.2s ease-in-out;
+  color: #112239;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.form-control.custom-input:focus {
+  border-color: #94a3b8;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(17, 34, 57, 0.05) !important;
+}
+
+.toggle-password-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.btnLogin {
+  width: 100%;
+  height: 52px;
+  border-radius: 8px !important;
+  background: #112239; /* Azul super escuro da referência */
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.btnLogin:hover {
+  background: #0f172a;
+  box-shadow: 0 6px 20px rgba(17, 34, 57, 0.25);
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1;
+    border-radius: 0;
+  }
+}
