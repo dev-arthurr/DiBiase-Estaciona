@@ -1,14 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "./variables.css";
 
 body {
-  font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  min-height: 100vh;
-  background: #112239;
-  overflow-x: hidden;
+  background: var(--color-primary);
 }
 
 .container {
