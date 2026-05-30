@@ -1,4 +1,7 @@
 :root {
   --color-primary: #112239;
   --color-bg: #f4f7f9;
+
+  /* components */
+  --color-bg-nav: #00305f;
 }
