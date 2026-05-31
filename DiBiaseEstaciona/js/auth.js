@@ -1,6 +1,36 @@
 const mockUsers = [
-  { matricula: "0101", senha: "123", role: "admin" },
-  { matricula: "0202", senha: "123", role: "colaborador" },
+  {
+    id: 1,
+    matricula: "0101",
+    nome: "João Silva",
+    email: "joao.silva@ugb.edu.br",
+    role: "admin",
+    senha: "123456",
+  },
+  {
+    id: 2,
+    matricula: "0202",
+    nome: "Maria Santos",
+    email: "maria.santos@ugb.edu.br",
+    role: "colaborador",
+    senha: "123456",
+  },
+  {
+    id: 3,
+    matricula: "0303",
+    nome: "Pedro Costa",
+    email: "pedro.costa@ugb.edu.br",
+    role: "colaborador",
+    senha: "123456",
+  },
+  {
+    id: 4,
+    matricula: "0404",
+    nome: "Ana Lima",
+    email: "ana.lima@ugb.edu.br",
+    role: "colaborador",
+    senha: "123456",
+  },
 ];
 
 const form = document.querySelector("form");
