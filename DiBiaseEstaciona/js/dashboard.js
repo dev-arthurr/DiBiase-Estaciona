@@ -12,7 +12,7 @@ document.getElementById("vagas-disponiveis").textContent =
 // PREENCHE TABELA
 const tbody = document.getElementById("table-movimentacoes");
 
-mockMovimentacoes.forEach((mov) => {
+mockMovimentacoes.slice(0, 10).forEach((mov) => {
   const tr = document.createElement("tr");
   tr.innerHTML = `
         <td class="placa">${mov.placa}</td>
