@@ -1,0 +1,19 @@
+@import "../css/style.css";
+@import "../css/variables.css";
+@import "../css/components/navbar.css";
+@import "../css/components/sidebar.css";
+
+/* ajustando menu dashboard */
+.dashboard {
+  background: var(--color-bg-menu);
+  border-left: 5px solid var(--color-menu-border-left);
+}
+
+.dashboard a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.menu:hover:not(.dashboard) {
+  background: rgb(251, 254, 255);
+}
