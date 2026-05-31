@@ -5,7 +5,13 @@
 }
 
 body {
+  height: 100vh;
   font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.layout {
+  display: flex;
+  height: calc(100vh - var(--navbar-height)); /* desconta a altura da navbar */
 }

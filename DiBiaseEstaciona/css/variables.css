@@ -4,4 +4,8 @@
 
   /* components */
   --color-bg-nav: #00305f;
+  --color-bg-side-menu: #eef8f9;
+  --color-txt-menu: #5a7280;
+
+  --navbar-height: 10vh;
 }
