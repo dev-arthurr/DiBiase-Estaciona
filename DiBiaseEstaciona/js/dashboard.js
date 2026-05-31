@@ -1,4 +1,4 @@
-import { mockDashboard } from "./mockData.js";
+import { mockDashboard, mockMovimentacoes } from "./mockData.js";
 
 // PREENCHE CARDS
 document.getElementById("total-veiculos").textContent =
@@ -8,3 +8,17 @@ document.getElementById("entradas-dia").textContent =
 document.getElementById("saidas-dia").textContent = mockDashboard.saidasDoDia;
 document.getElementById("vagas-disponiveis").textContent =
   `${mockDashboard.vagasDisponiveis} / ${mockDashboard.vagasTotal}`;
+
+// PREENCHE TABELA
+const tbody = document.getElementById("table-movimentacoes");
+
+mockMovimentacoes.forEach((mov) => {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+        <td class="placa">${mov.placa}</td>
+        <td><span class="pill pill-${mov.tipo}">${mov.tipo.toUpperCase()}</span></td>
+        <td>${mov.horario}</td>
+        <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+    `;
+  tbody.appendChild(tr);
+});

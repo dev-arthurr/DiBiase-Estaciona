@@ -21,7 +21,7 @@
         <aside class="sidebar">
             <div class="top-side">
                 <div class="menu dashboard">
-                    <a href="" class="link-side a-dashboard">
+                    <a href="" class="link-side text-dashboard">
                         Dashboard
                     </a>
                 </div>
@@ -61,10 +61,54 @@
                 </div>
             </div>
         </aside>
-        <main class="content">
 
+        <main class="content">
+            <div class="inner_content">
+                <div class="cards-grid">
+                    <div class="card">
+                        <h2 id="total-veiculos"></h2>
+                        <h3>Veículos Estacionados</h3>
+                    </div>
+
+                    <div class="card">
+                        <h2 id="entradas-dia"></h2>
+                        <h3>Entradas do Dia</h3>
+                    </div>
+
+                    <div class="card">
+                        <h2 id="saidas-dia"></h2>
+                        <h3>Saídas do Dia</h3>
+                    </div>
+
+                    <div class="card">
+                        <h2 id="vagas-disponiveis"></h2>
+                        <h3>Vagas Disponíveis</h3>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="title">Últimas movimentações</h3>
+                        <a href="">Ver todas →</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PLACA</th>
+                                <th>TIPO</th>
+                                <th>HORARIO</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-movimentacoes">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </main>
     </div>
+
+    <script type="module" src="../js/dashboard.js"></script>
 </body>
 
 </html>

@@ -17,3 +17,138 @@
 .menu:hover:not(.dashboard) {
   background: rgb(251, 254, 255);
 }
+
+/* CONTEUDO */
+.content {
+  width: 100%;
+  background: var(--color-bg);
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.inner_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  gap: 6vh;
+
+  padding: 40px 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  height: 13vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid var(--color-border-default);
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.card h2 {
+  color: var(--color-cards-dashboard);
+  font-size: 40px;
+}
+.card h3 {
+  color: var(--color-txt-menu);
+  font-size: 15px;
+}
+
+/* TABELA MOVIM. */
+.table-container {
+  width: 100%;
+
+  border: 1px solid var(--color-border-default);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.table-header h3 {
+  color: var(--color-cards-dashboard);
+  font-size: 18px;
+}
+
+.table-header a {
+  color: #00abbd;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+thead th {
+  padding: 14px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-txt-menu);
+  border-bottom: 1px solid var(--color-border-default);
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 14px 16px;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.placa {
+  font-weight: bold;
+}
+
+.pill {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.pill-entrada {
+  background: #d4edda;
+  color: #1a7a3a;
+}
+.pill-saida {
+  background: #f8d7da;
+  color: #842029;
+}
+.pill-estacionado {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+.pill-ausente {
+  background: #e2e3e5;
+  color: #383d41;
+}
