@@ -46,6 +46,7 @@ form.addEventListener("submit", function (e) {
   if (user && user.senha === password) {
     localStorage.setItem("token", "mock-token-123");
     localStorage.setItem("role", user.role);
+    localStorage.setItem("nome", user.nome);
 
     window.location.replace("../pages/dashboard.html");
   } else {
