@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/components/navbar.css">
-    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/sidebar.css">
     <title>Document</title>
 </head>
 
 <body>
     <nav>
         <h1>DiBiase Estaciona</h1>
-        <img src="../../assets/images/logoUGB.png" class="navbar-logo">
+        <img src="../assets/images/logoUGB.png" class="navbar-logo">
     </nav>
 
     <div class="layout">
@@ -49,14 +49,18 @@
                     </a>
                 </div>
             </div>
-            <div class="side-footer">
+            <div class="side-footer" id="side-footer">
                 <div class="img-side-footer">
-                    <img src="../../assets/images/userIcon.png" alt="" class="userLogo">
+                    <img src="../assets/images/userIcon.png" alt="" class="userLogo">
                 </div>
 
                 <div class="user-sidebar">
-                    <h3>Joao SIlva</h3>
-                    <p>Administrador</p>
+                    <h3 id="userName"></h3>
+                    <p id="UserRole"></p>
+                </div>
+
+                <div class="side-footer-menu" id="side-footer-menu">
+                    <a href="" id="logout">Sair</a>
                 </div>
             </div>
         </aside>
@@ -64,6 +68,8 @@
 
         </main>
     </div>
+
+    <script type="module" src="../js/components.js"></script>
 </body>
 
 </html>

@@ -8,6 +8,14 @@ const mockUsers = [
     senha: "123456",
   },
   {
+    id: 5,
+    matricula: "1",
+    nome: "Arthur",
+    email: "joao.silva@ugb.edu.br",
+    role: "admin",
+    senha: "1",
+  },
+  {
     id: 2,
     matricula: "0202",
     nome: "Maria Santos",
