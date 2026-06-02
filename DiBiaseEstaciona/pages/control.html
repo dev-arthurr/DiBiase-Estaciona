@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/control.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <h1>DiBiase Estaciona</h1>
+        <img src="../assets/images/logoUGB.png" class="navbar-logo">
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="top-side">
+                <div class="menu dashboard">
+                    <a href="" class="link-side">
+                        Dashboard
+                    </a>
+                </div>
+
+                <div class="menu controle-veiculos">
+                    <a href="" class="link-side">
+                        Controle de veiculos
+                    </a>
+                </div>
+
+                <div class="menu entradas-saidas">
+                    <a href="" class="link-side">
+                        Entradas e saídas
+                    </a>
+                </div>
+
+                <div class="menu relatorios">
+                    <a href="" class="link-side">
+                        Relatórios
+                    </a>
+                </div>
+
+                <div class="menu gestao">
+                    <a href="" class="link-side">
+                        Gestão de Usuários
+                    </a>
+                </div>
+            </div>
+            <div class="side-footer" id="side-footer">
+                <div class="img-side-footer">
+                    <img src="../assets/images/userIcon.png" alt="" class="userLogo">
+                </div>
+
+                <div class="user-sidebar">
+                    <h3 id="userName"></h3>
+                    <p id="UserRole"></p>
+                </div>
+
+                <div class="side-footer-menu" id="side-footer-menu">
+                    <a href="" id="logout">Sair</a>
+                </div>
+            </div>
+        </aside>
+        <main class="content">
+            <div class="inner_content">
+                <div class="fields">
+                    <div class="search_bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search" placeholder="Buscar por placa...">
+                    </div>
+                    <div class="buttons">
+                        <button onclick="todos()">Todos</button>
+                        <button onclick="estacionado()">Estacionado</button>
+                        <button onclick="ausente()">Ausente</button>
+
+                        <button onclick="add()">Cadastrar Veículos</button>
+                    </div>
+                </div>
+                <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>PLACA</th>
+                                <th>TIPO</th>
+                                <th>HORARIO</th>
+                                <th>STATUS</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-movimentacoes">
+                        </tbody>
+                    </table>
+            </div>
+        
+    </div>
+
+    <script type="module" src="../js/components.js"></script>
+</body>
+
+</html>
