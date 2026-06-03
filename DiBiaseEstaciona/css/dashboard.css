@@ -41,9 +41,9 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 12px;
   justify-content: space-between;
-  gap: 40px;
   width: 100%;
 }
 
@@ -151,4 +151,80 @@ tbody td {
 .pill-ausente {
   background: #e2e3e5;
   color: #383d41;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .table-container {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  table {
+    min-width: 680px;
+  }
+
+  thead th,
+  tbody td {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    border-radius: 8px;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  thead th,
+  tbody td {
+    padding: 10px 2px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .pill {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    min-width: 320px;
+  }
+
+  thead th {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  tbody td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .content {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+
+  .card h2 {
+    font-size: 30px;
+  }
 }

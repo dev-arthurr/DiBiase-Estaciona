@@ -92,3 +92,27 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+/* RESPONSIVO */
+
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sidebar.active {
+    display: flex;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+}

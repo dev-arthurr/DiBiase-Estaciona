@@ -22,3 +22,27 @@ h1 {
   height: 80px;
   width: auto;
 }
+
+.menu-icon {
+  display: none;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: clamp(25px, 2vw, 50px);
+  }
+
+  .navbar-logo {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    height: 30px;
+  }
+}
