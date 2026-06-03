@@ -3,9 +3,64 @@
 @import "../css/components/navbar.css";
 @import "../css/components/sidebar.css";
 
+
 .fields {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+}
+
+.todos {
+  width: 80px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.estacionado {
+  width: 110px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.ausente {
+  width: 110px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.add {
+  width: 180px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+button {
+    background-color: white;
+}
+
+.ativo {
+    background-color: #00305F;
+    color: white;
+}
+
+.search_bar{
+  position: relative;
+  width: 300px;
+  border-radius: 8px;
+}
+
+.search_bar i{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.search_bar input{
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border-radius: 8px;
 }
 
 table {

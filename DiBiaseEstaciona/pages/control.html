@@ -71,14 +71,14 @@
                 <div class="fields">
                     <div class="search_bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="search" placeholder="Buscar por placa...">
+                        <input type="text" placeholder="Buscar por placa...">
                     </div>
                     <div class="buttons">
-                        <button onclick="todos()">Todos</button>
-                        <button onclick="estacionado()">Estacionado</button>
-                        <button onclick="ausente()">Ausente</button>
+                        <button class="todos" id="todos" onclick="todos()">Todos</button>
+                        <button class="estacionado" id="estacionado" onclick="estacionado()">Estacionado</button>
+                        <button class="ausente" id="ausente" onclick="ausente()">Ausente</button>
 
-                        <button onclick="add()">Cadastrar Veículos</button>
+                        <button class="add" onclick="add()">Cadastrar Veículos</button>
                     </div>
                 </div>
                 <table>
@@ -86,19 +86,20 @@
                             <tr>
                                 <th>#</th>
                                 <th>PLACA</th>
-                                <th>TIPO</th>
-                                <th>HORARIO</th>
+                                <th>PROPRIETARIO</th>
+                                <th>MATRICULA</th>
+                                <th>MODELO</th>
                                 <th>STATUS</th>
                                 <th>AÇÕES</th>
                             </tr>
                         </thead>
-                        <tbody id="table-movimentacoes">
+                        <tbody id="table-controle">
                         </tbody>
                     </table>
             </div>
         
     </div>
-
+    <script type="module" src="../js/control.js"></script>
     <script type="module" src="../js/components.js"></script>
 </body>
 
