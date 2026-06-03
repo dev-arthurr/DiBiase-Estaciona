@@ -50,7 +50,11 @@
   width: 180px;
   height: 44px;
   border-radius: 8px;
+  background-color: #25BA00;
+  color: #FFFFFF;
+  margin-left: 77px;
 }
+
 
 button {
     background-color: white;
@@ -137,3 +141,15 @@ tbody td {
   background: #e2e3e5;
   color: #383d41;
 }
+
+.content_title{
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.content_title h2{
+  color: #00305F;
+}
+
