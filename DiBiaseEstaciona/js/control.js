@@ -94,4 +94,45 @@ window.pesquisar = function() {
         `;
     tbody.appendChild(tr);
     });
+};
+
+let paginaAtual = 1;
+const itensPorPagina = 10;
+
+function carregarTabela() {
+    const tbody = document.getElementById("table-controle");
+    tbody.innerHTML = "";
+
+    const inicio = (paginaAtual - 1) * itensPorPagina;
+    const fim = inicio + itensPorPagina;
+
+    mockVeiculos.slice(inicio, fim).forEach((mov) => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${mov.id}</td>
+            <td>${mov.placa}</td>
+            <td>${mov.proprietario}</td>
+            <td>${mov.matricula}</td>
+            <td>${mov.modelo}</td>
+            <td>${mov.status}</td>
+        `;
+
+        tbody.appendChild(tr);
+    });
 }
+
+window.proxima = function() {
+    paginaAtual++;
+    carregarTabela();
+    document.getElementById("pagina").textContent = paginaAtual;
+}
+
+window.anterior = function() {
+    if (paginaAtual > 1) {
+        paginaAtual--;
+        carregarTabela();
+        document.getElementById("pagina").textContent = paginaAtual;
+    }
+}
+
