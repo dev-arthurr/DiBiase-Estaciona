@@ -3,11 +3,29 @@
 @import "../css/components/navbar.css";
 @import "../css/components/sidebar.css";
 
+.content {
+  width: 100%;
+  background: var(--color-bg);
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.inner_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  gap: 20px;
+  padding: 40px 0;
+}
 
 .fields {
+  width: 100%;
   display: flex;
   gap: 20px;
-  padding: 25px;
 }
 
 .todos {
@@ -36,6 +54,7 @@
 
 button {
     background-color: white;
+    border: 1px solid #DCE8EC;
 }
 
 .ativo {

@@ -71,7 +71,7 @@
                 <div class="fields">
                     <div class="search_bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Buscar por placa...">
+                        <input type="text" onkeydown="if(event.key === 'Enter') pesquisar()" placeholder="Buscar por placa...">
                     </div>
                     <div class="buttons">
                         <button class="todos" id="todos" onclick="todos()">Todos</button>
@@ -95,7 +95,7 @@
                         </thead>
                         <tbody id="table-controle">
                         </tbody>
-                    </table>
+                </table>
             </div>
         
     </div>
