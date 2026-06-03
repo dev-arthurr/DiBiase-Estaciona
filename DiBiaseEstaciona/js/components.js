@@ -5,6 +5,21 @@ document.getElementById("userName").textContent = nome;
 document.getElementById("UserRole").textContent =
   role === "admin" ? "Administrador" : "Colaborador";
 
+// ABRE E FECHA SIDEBAR
+const menuIcon = document.getElementById("menu-icon");
+const sidebar = document.getElementById("sidebar");
+
+menuIcon.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+// FECHA QUANDO CLICA FORA
+// document.addEventListener("click", (e) => {
+//   if (!sidebar.contains(e.target) && !menuIcon.contains(e.target)) {
+//     sidebar.classList.remove("active");
+//   }
+// });
+
 // MENU LOGOUT
 const footer = document.getElementById("side-footer");
 const menu = document.getElementById("side-footer-menu");
@@ -20,6 +35,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// LOGOUT
 document.getElementById("side-footer-menu").addEventListener("click", (e) => {
   e.preventDefault();
 

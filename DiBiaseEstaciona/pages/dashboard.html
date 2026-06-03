@@ -1,125 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-Br">
-
-<head>
+  <head>
     <script>
-        if (!localStorage.getItem('token')) {
-            window.location.replace('../pages/login.html')
-        }
+      if (!localStorage.getItem("token")) {
+        window.location.replace("../pages/login.html");
+      }
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/components/navbar.css">
-    <link rel="stylesheet" href="../css/components/sidebar.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components/navbar.css" />
+    <link rel="stylesheet" href="../css/components/sidebar.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <h1>DiBiase Estaciona</h1>
-        <img src="../assets/images/logoUGB.png" class="navbar-logo">
+      <h1>DiBiase Estaciona</h1>
+      <img src="../assets/images/logoUGB.png" class="navbar-logo" />
+      <img
+        src="../assets/images/menu-aberto.png"
+        class="menu-icon"
+        id="menu-icon"
+      />
     </nav>
 
     <div class="layout">
-        <aside class="sidebar">
-            <div class="top-side">
-                <div class="menu dashboard">
-                    <a href="" class="link-side text-dashboard">
-                        Dashboard
-                    </a>
-                </div>
+      <aside class="sidebar" id="sidebar">
+        <div class="top-side">
+          <div class="menu dashboard">
+            <a href="" class="link-side text-dashboard"> Dashboard </a>
+          </div>
 
-                <div class="menu controle-veiculos">
-                    <a href="" class="link-side">
-                        Controle de veiculos
-                    </a>
-                </div>
+          <div class="menu controle-veiculos">
+            <a href="" class="link-side"> Controle de veiculos </a>
+          </div>
 
-                <div class="menu entradas-saidas">
-                    <a href="" class="link-side">
-                        Entradas e saídas
-                    </a>
-                </div>
+          <div class="menu entradas-saidas">
+            <a href="" class="link-side"> Entradas e saídas </a>
+          </div>
 
-                <div class="menu relatorios">
-                    <a href="" class="link-side">
-                        Relatórios
-                    </a>
-                </div>
+          <div class="menu relatorios">
+            <a href="" class="link-side"> Relatórios </a>
+          </div>
 
-                <div class="menu gestao">
-                    <a href="" class="link-side">
-                        Gestão de Usuários
-                    </a>
-                </div>
+          <div class="menu gestao">
+            <a href="" class="link-side"> Gestão de Usuários </a>
+          </div>
+        </div>
+        <div class="side-footer" id="side-footer">
+          <div class="img-side-footer">
+            <img src="../assets/images/userIcon.png" alt="" class="userLogo" />
+          </div>
+
+          <div class="user-sidebar">
+            <h3 id="userName"></h3>
+            <p id="UserRole"></p>
+          </div>
+
+          <div class="side-footer-menu" id="side-footer-menu">
+            <a href="#" id="logout">Sair</a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="inner_content">
+          <div class="cards-grid">
+            <div class="card">
+              <h2 id="total-veiculos"></h2>
+              <h3>Veículos Estacionados</h3>
             </div>
-            <div class="side-footer" id="side-footer">
-                <div class="img-side-footer">
-                    <img src="../assets/images/userIcon.png" alt="" class="userLogo">
-                </div>
 
-                <div class="user-sidebar">
-                    <h3 id="userName"></h3>
-                    <p id="UserRole"></p>
-                </div>
-
-                <div class="side-footer-menu" id="side-footer-menu">
-                    <a href="#" id="logout">Sair</a>
-                </div>
+            <div class="card">
+              <h2 id="entradas-dia"></h2>
+              <h3>Entradas do Dia</h3>
             </div>
-        </aside>
 
-        <main class="content">
-            <div class="inner_content">
-                <div class="cards-grid">
-                    <div class="card">
-                        <h2 id="total-veiculos"></h2>
-                        <h3>Veículos Estacionados</h3>
-                    </div>
-
-                    <div class="card">
-                        <h2 id="entradas-dia"></h2>
-                        <h3>Entradas do Dia</h3>
-                    </div>
-
-                    <div class="card">
-                        <h2 id="saidas-dia"></h2>
-                        <h3>Saídas do Dia</h3>
-                    </div>
-
-                    <div class="card">
-                        <h2 id="vagas-disponiveis"></h2>
-                        <h3>Vagas Disponíveis</h3>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <div class="table-header">
-                        <h3 class="title">Últimas movimentações</h3>
-                        <a href="">Ver todas →</a>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>PLACA</th>
-                                <th>TIPO</th>
-                                <th>HORARIO</th>
-                                <th>STATUS</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-movimentacoes">
-                        </tbody>
-                    </table>
-                </div>
+            <div class="card">
+              <h2 id="saidas-dia"></h2>
+              <h3>Saídas do Dia</h3>
             </div>
-        </main>
+
+            <div class="card">
+              <h2 id="vagas-disponiveis"></h2>
+              <h3>Vagas Disponíveis</h3>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <div class="table-header">
+              <h3 class="title">Últimas movimentações</h3>
+              <a href="">Ver todas →</a>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>PLACA</th>
+                  <th>TIPO</th>
+                  <th>HORARIO</th>
+                  <th>STATUS</th>
+                </tr>
+              </thead>
+              <tbody id="table-movimentacoes"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
     </div>
 
     <script type="module" src="../js/dashboard.js"></script>
     <script type="module" src="../js/components.js"></script>
-</body>
-
+  </body>
 </html>

@@ -67,6 +67,10 @@ body {
   box-shadow: -15px 0 40px rgba(0, 0, 0, 0.1);
 }
 
+.logo-azul {
+  display: none;
+}
+
 .auth-container-right {
   margin: auto;
   width: 100%;
@@ -170,5 +174,11 @@ body {
   .right-panel {
     flex: 1;
     border-radius: 0;
+  }
+
+  .logo-azul {
+    display: block;
+    margin: 0 auto 30px auto;
+    max-width: 150px;
   }
 }
