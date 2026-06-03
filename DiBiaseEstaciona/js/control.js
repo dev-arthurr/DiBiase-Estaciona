@@ -77,11 +77,12 @@ window.pesquisar = function() {
     const tbody = document.getElementById("table-controle");
     tbody.innerHTML = "";
 
-    const veiculosAusente = mockVeiculos.filter(
-        (veiculo) => veiculo.status === "ausente"
-    );
+    const pesquisa = document.getElementById("pesquisa").value;
 
-    veiculosAusente.forEach((mov) => {
+    const veiculosSearch = mockVeiculos.filter(
+        (veiculo) => veiculo.placa === pesquisa);
+
+    veiculosSearch.forEach((mov) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
             <td class="#">${mov.id}</td>
