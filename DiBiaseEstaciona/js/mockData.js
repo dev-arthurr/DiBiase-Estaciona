@@ -185,7 +185,7 @@ const mockMovimentacoes = [
     horario: "08:02",
     permanencia: null,
     status: "estacionado",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=ABC-1234",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 2,
@@ -194,7 +194,7 @@ const mockMovimentacoes = [
     horario: "08:15",
     permanencia: null,
     status: "estacionado",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=PQR-2345",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 3,
@@ -203,7 +203,7 @@ const mockMovimentacoes = [
     horario: "08:30",
     permanencia: null,
     status: "estacionado",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=DEF-5678",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 4,
@@ -212,7 +212,7 @@ const mockMovimentacoes = [
     horario: "09:45",
     permanencia: "1h 15min",
     status: "ausente",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=DEF-5678",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 5,
@@ -221,7 +221,7 @@ const mockMovimentacoes = [
     horario: "10:00",
     permanencia: null,
     status: "estacionado",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=GHI-9012",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 6,
@@ -230,7 +230,7 @@ const mockMovimentacoes = [
     horario: "10:20",
     permanencia: null,
     status: "estacionado",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=JKL-3456",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 7,
@@ -239,7 +239,7 @@ const mockMovimentacoes = [
     horario: "11:50",
     permanencia: "1h 30min",
     status: "ausente",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=JKL-3456",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 8,
@@ -248,7 +248,7 @@ const mockMovimentacoes = [
     horario: "12:05",
     permanencia: null,
     status: "estacionado",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=MNO-7890",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 9,
@@ -257,7 +257,7 @@ const mockMovimentacoes = [
     horario: "13:10",
     permanencia: null,
     status: "estacionado",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=STU-6789",
+    foto: "../assets/images/placa-carro.jpg",
   },
   {
     id: 10,
@@ -266,7 +266,7 @@ const mockMovimentacoes = [
     horario: "14:30",
     permanencia: "1h 20min",
     status: "ausente",
-    foto: "https://placehold.co/120x80/112239/ffffff?text=STU-6789",
+    foto: "../assets/images/placa-carro.jpg",
   },
 ];
 

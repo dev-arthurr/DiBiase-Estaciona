@@ -38,6 +38,14 @@ window.todos = function () {
             <td><span class="pill pill-${mov.tipo}">${mov.tipo.toUpperCase()}</span></td>
             <td class="modelo">${mov.permanencia}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td>
+            <a href="${mov.foto}" target="_blank">
+              <img src="${mov.foto}" alt="Imagem ${mov.placa}" width="60" height="40"
+                style="object-fit: cover; border-radius: 4px; cursor: pointer;"
+                onerror="this.src='placeholder.png'"
+              />
+            </a>
+            </td>
         `;
     tbody.appendChild(tr);
   });

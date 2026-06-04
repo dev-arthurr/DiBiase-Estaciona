@@ -109,10 +109,19 @@ button {
   border: 1px solid var(--color-border-default);
 }
 
+.table-container {
+  width: 100%;
+
+  border: 1px solid var(--color-border-default);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
-  background: white;
 }
 
 thead th {
@@ -122,6 +131,10 @@ thead th {
   color: var(--color-txt-menu);
   border-bottom: 1px solid var(--color-border-default);
   text-align: left;
+}
+
+tbody {
+  background: white;
 }
 
 tbody tr {
