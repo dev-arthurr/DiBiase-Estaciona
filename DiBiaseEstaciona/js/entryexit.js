@@ -8,6 +8,11 @@ function ativarBotao(idBotao) {
   document.getElementById(idBotao).classList.add("ativo");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  ativarBotao("todos");
+  window.todos();
+});
+
 const veiculosTodas = mockMovimentacoes.sort((a, b) => {
   const [horaA, minA] = a.horario.split(":").map(Number);
   const [horaB, minB] = b.horario.split(":").map(Number);
