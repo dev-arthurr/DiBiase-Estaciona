@@ -154,6 +154,11 @@ tbody td {
   padding: 14px 16px;
   font-size: 16px;
   color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .placa {

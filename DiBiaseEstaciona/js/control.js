@@ -122,6 +122,7 @@ window.ausente = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
+  document.getElementById("exibion").innerHTML="Exibindo " + paginaAtual + "-" + paginausente + " de " + mockVeiculos.length + " veículos";
 };
 
 window.pesquisar = function () {
