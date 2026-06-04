@@ -22,3 +22,16 @@ mockMovimentacoes.slice(0, 10).forEach((mov) => {
     `;
   tbody.appendChild(tr);
 });
+
+// FUNCIONALIDADE CARDS
+document.getElementById("cardEstacionados").addEventListener("click", () => {
+  window.location.href = "../pages/control.html";
+});
+
+document.getElementById("cardEntradas").addEventListener("click", () => {
+  window.location.href = "../pages/entryexit.html";
+});
+
+document.getElementById("cardSaidas").addEventListener("click", () => {
+  window.location.href = "../pages/entryexit.html";
+});

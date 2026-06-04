@@ -99,6 +99,10 @@
   .sidebar {
     width: 200px;
   }
+
+  .link-side {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 1000px) {
