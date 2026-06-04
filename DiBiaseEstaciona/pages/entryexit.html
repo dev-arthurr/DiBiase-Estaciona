@@ -64,22 +64,17 @@
               <i class="fa-solid fa-magnifying-glass"></i>
               <input
                 type="text"
+                id="pesquisa"
                 onkeydown="if (event.key === 'Enter') pesquisar();"
                 placeholder="Buscar por placa..."
               />
             </div>
             <div class="buttons">
               <button class="todos" id="todos" onclick="todos()">Todos</button>
-              <button
-                class="estacionado"
-                id="estacionado"
-                onclick="estacionado()"
-              >
-                Estacionado
+              <button class="entrada" id="entrada" onclick="entrada()">
+                Entrada
               </button>
-              <button class="ausente" id="ausente" onclick="ausente()">
-                Ausente
-              </button>
+              <button class="saida" id="saida" onclick="saida()">Saída</button>
 
               <button class="add" onclick="add()">Nova movimentação</button>
             </div>
@@ -91,11 +86,11 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>MOVIMENTAÇÕES</th>
-                <th>HORÁRIO DE REGISTRO</th>
                 <th>PLACA</th>
-                <th>PERMANÊCIA</th>
+                <th>HORÁRIO DE REGISTRO</th>
                 <th>TIPO</th>
+                <th>PERMANÊCIA</th>
+                <th>STATUS</th>
                 <th>IMAGEM</th>
               </tr>
             </thead>
@@ -106,5 +101,6 @@
     </div>
 
     <script type="module" src="../js/components.js"></script>
+    <script type="module" src="../js/entryexit.js"></script>
   </body>
 </html>
