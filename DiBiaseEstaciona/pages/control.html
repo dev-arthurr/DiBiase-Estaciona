@@ -69,6 +69,7 @@
               <i class="fa-solid fa-magnifying-glass"></i>
               <input
                 type="text"
+                id="pesquisa"
                 onkeydown="if (event.key === 'Enter') pesquisar();"
                 placeholder="Buscar por placa..."
               />
@@ -89,20 +90,27 @@
               <button class="add" onclick="add()">Cadastrar Veículos</button>
             </div>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>PLACA</th>
-                <th>PROPRIETARIO</th>
-                <th>MATRICULA</th>
-                <th>MODELO</th>
-                <th>STATUS</th>
-                <th>AÇÕES</th>
-              </tr>
-            </thead>
-            <tbody id="table-controle"></tbody>
-          </table>
+          <div class="table_container">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>PLACA</th>
+                  <th>PROPRIETARIO</th>
+                  <th>MATRICULA</th>
+                  <th>MODELO</th>
+                  <th>STATUS</th>
+                  <th>AÇÕES</th>
+                </tr>
+              </thead>
+              <tbody id="table-controle"></tbody>
+            </table>
+            <div class="pages">
+              <button onclick="anterior()">Anterior</button>
+              <span id="pagina">1</span>
+              <button onclick="proxima()">Próxima</button>
+            </div>
+          </div>
         </div>
       </main>
     </div>
