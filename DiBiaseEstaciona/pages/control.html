@@ -16,19 +16,6 @@
 
   <body>
     <nav>
-
-        <h1>DiBiase Estaciona</h1>
-        <img src="../assets/images/logoUGB.png" class="navbar-logo">
-    </nav>
-
-    <div class="layout">
-        <aside class="sidebar">
-            <div class="top-side">
-                <div class="menu dashboard">
-                    <a href="dashboard.html" class="link-side">
-                        Dashboard
-                    </a>
-                </div>
       <h1>DiBiase Estaciona</h1>
       <img src="../assets/images/logoUGB.png" class="navbar-logo" />
     </nav>
@@ -86,47 +73,6 @@
                 placeholder="Buscar por placa..."
               />
             </div>
-        </aside>
-        <main class="content">
-            <div class="inner_content">
-                <div class="fields">
-                    <div class="search_bar">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="pesquisa" onkeydown="if(event.key === 'Enter') pesquisar()"
-                            placeholder="Buscar por placa...">
-                    </div>
-                    <div class="buttons">
-                        <button class="todos" id="todos" onclick="todos()">Todos</button>
-                        <button class="estacionado" id="estacionado" onclick="estacionado()">Estacionado</button>
-                        <button class="ausente" id="ausente" onclick="ausente()">Ausente</button>
-
-                        <button class="add" onclick="add()">Cadastrar Veículos</button>
-                    </div>
-                </div>
-                <div class="table_container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>PLACA</th>
-                                <th>PROPRIETARIO</th>
-                                <th>MATRICULA</th>
-                                <th>MODELO</th>
-                                <th>STATUS</th>
-                                <th>AÇÕES</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-controle">
-                        </tbody>
-                    </table>
-                    <div class="pages">
-                    <button onclick="anterior()">anterior</button>
-                    <span id="pagina">1</span>
-                    <button onclick="proxima()">proxima</button>
-                    </div>
-                </div>
-            </div>
-
             <div class="buttons">
               <button class="todos" id="todos" onclick="todos()">Todos</button>
               <button
