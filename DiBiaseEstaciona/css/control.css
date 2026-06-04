@@ -37,9 +37,8 @@
 }
 
 .fields {
-  display: flex;
-  align-items: center;
   width: 100%;
+  display: flex;
   gap: 20px;
 }
 
@@ -65,19 +64,9 @@
   width: 180px;
   height: 44px;
   border-radius: 8px;
-  margin-left: auto;
-}
-
-.buttons {
-  display: flex;
-  gap: 10px;
-  width: 100%;
 }
 
 button {
-  background: white;
-  border: 1px solid #DCE8EC;
-  cursor: pointer;
   background-color: white;
   border: 1px solid #dce8ec;
 }
@@ -101,20 +90,6 @@ button {
   color: gray;
 }
 
-.search_bar input{
-  width: 100%;
-  padding: 10px 10px 10px 35px;
-  border-radius: 8px;
-}
-
-.table_container {
-  width: 100%;
-  border: 1px solid var(--color-border-default);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  height: 680px;
-  background: white;
 .search_bar input {
   width: 100%;
   padding: 10px 10px 10px 35px;
@@ -122,10 +97,7 @@ button {
 }
 
 table {
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 12px;
-  overflow: hidden;
+  border-collapse: collapse;
   width: 100%;
   background: white;
 }
@@ -137,7 +109,6 @@ thead th {
   color: var(--color-txt-menu);
   border-bottom: 1px solid var(--color-border-default);
   text-align: left;
-  background: #F4F7F9
 }
 
 tbody tr {
@@ -179,15 +150,4 @@ tbody td {
 .pill-ausente {
   background: #e2e3e5;
   color: #383d41;
-}
-
-.pages{
-  display: flex;
-  align-items: end;
-  height: 100%;
-  padding: 14px 16px;
-}
-
-.pages button {
-  border: none;
 }
