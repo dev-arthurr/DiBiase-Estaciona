@@ -19,25 +19,25 @@
         <aside class="sidebar">
             <div class="top-side">
                 <div class="menu dashboard">
-                    <a href="" class="link-side">
+                    <a href="./dashboard.html" class="link-side">
                         Dashboard
                     </a>
                 </div>
 
                 <div class="menu controle-veiculos">
-                    <a href="" class="link-side">
+                    <a href="./control.html" class="link-side">
                         Controle de veiculos
                     </a>
                 </div>
 
                 <div class="menu entradas-saidas">
-                    <a href="" class="link-side">
+                    <a href="./entryexit.html" class="link-side">
                         Entradas e saídas
                     </a>
                 </div>
 
                 <div class="menu relatorios">
-                    <a href="./" class="link-side">
+                    <a href="./relatorio.html" class="link-side">
                         Relatórios
                     </a>
                 </div>
@@ -63,11 +63,96 @@
                 </div>
             </div>
         </aside>
-        <main class="content">
+        
+        <div class="content">
+            <div class="inner_content">
 
-        </main>
+                <div class="header_users">
+
+                    <div class="search_container">
+                        <input
+                            type="text"
+                            class="search_input"
+                            placeholder="Buscar usuário"
+                        >
+                    </div>
+
+                    <button class="btn_create">
+                        Cadastrar Usuário
+                    </button>
+
+                </div>
+
+                <div class="table_container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>MATRÍCULA</th>
+                                <th>USUÁRIO</th>
+                                <th>FUNÇÃO</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>01</td>
+                                <td><strong>75462163</strong></td>
+                                <td>joao.silva@ugb.com.br</td>
+                                <td>Administrador</td>
+                                <td class="actions">
+                                    <button class="btn_update">ATUALIZAR</button>
+                                    <button class="btn_delete">DELETAR</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>02</td>
+                                <td><strong>657127127</strong></td>
+                                <td>douglas.luiz@ugb.com.br</td>
+                                <td>Operador</td>
+                                <td class="actions">
+                                    <button class="btn_update">ATUALIZAR</button>
+                                    <button class="btn_delete">DELETAR</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>03</td>
+                                <td><strong>84571234</strong></td>
+                                <td>lucas.paqueta@ugb.com.br</td>
+                                <td>Operador</td>
+                                <td class="actions">
+                                    <button class="btn_update">ATUALIZAR</button>
+                                    <button class="btn_delete">DELETAR</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>04</td>
+                                <td><strong>91234567</strong></td>
+                                <td>gonzalo.plata@ugb.com.br</td>
+                                <td>Administrador</td>
+                                <td class="actions">
+                                    <button class="btn_update">ATUALIZAR</button>
+                                    <button class="btn_delete">DELETAR</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
     <script type="module" src="../js/components.js"></script>
+
 </body>
 </html>

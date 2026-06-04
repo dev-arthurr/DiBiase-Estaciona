@@ -1,0 +1,129 @@
+@import "../css/style.css";
+@import "../css/variables.css";
+@import "../css/components/navbar.css";
+@import "../css/components/sidebar.css";
+
+
+.menu.gestao {
+  background: var(--color-bg-menu);
+  border-left: 5px solid var(--color-menu-border-left);
+}
+
+.menu.gestao a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.content {
+    width: 100%;
+    background: var(--color-bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.inner_content {
+    width: 90%;
+    padding: 40px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header_users {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search_input {
+    width: 230px;
+    height: 44px;
+    border: 1px solid #DCE8EC;
+    border-radius: 8px;
+    padding: 0 12px;
+}
+
+.btn_create {
+    width: 180px;
+    height: 44px;
+
+    background: #00305f;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+.btn_create:hover {
+    opacity: .9;
+}
+
+.table_container {
+    width: 100%;
+    background: white;
+    border: 1px solid var(--color-border-default);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table_container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table_container th {
+    background: white;
+    color: var(--color-txt-menu);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    padding: 18px;
+    border-bottom: 1px solid var(--color-border-default);
+}
+
+.table_container td {
+    padding: 18px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-border-default);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn_update {
+    background: #ffe56d;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn_delete {
+    background: #ffcfcf;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.menu.active {
+    background: var(--color-bg-menu);
+    border-left: 4px solid var(--color-menu-border-left);
+}
+
+.table_container th{
+    background: #F4F7F9;
+}
