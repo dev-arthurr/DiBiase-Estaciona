@@ -42,6 +42,7 @@ window.todos = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
+  document.getElementById("exibion").innerHTML="Exibindo " + paginaAtual + "-" + paginatodos + " de " + mockVeiculos.length + " veículos";
 };
 
 const veiculosEstacionados = mockVeiculos.filter(
@@ -52,7 +53,6 @@ window.estacionado = function () {
   ativarBotao("estacionado");
   const tbody = document.getElementById("table-controle");
   tbody.innerHTML = "";
-
   const inicio = (paginaAtual - 1) * itensPorPagina;
   const fim = inicio + itensPorPagina;
 
@@ -75,6 +75,7 @@ window.estacionado = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
+  
   window.anterior = function () {
     if (paginaAtual > 1) {
       paginaAtual--;
@@ -82,6 +83,7 @@ window.estacionado = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
+  document.getElementById("exibion").innerHTML="Exibindo " + paginaAtual + "-" + paginaestacionada + " de " + mockVeiculos.length + " veículos";
 };
 
 const veiculosAusente = mockVeiculos.filter(
@@ -155,3 +157,22 @@ let numerodecarros = mockVeiculos.length;
 let paginaestacionada = Math.ceil(veiculosEstacionados.length / itensPorPagina);
 let paginausente = Math.ceil(veiculosAusente.length / itensPorPagina);
 let paginatodos = Math.ceil(mockVeiculos.length / itensPorPagina);
+
+
+window.filtrotodos = function () {
+  paginaAtual = 1;
+  todos();
+  document.getElementById("pagina").textContent = paginaAtual;
+};
+
+window.filtroestacionado = function () {
+  paginaAtual = 1;
+  estacionado();
+  document.getElementById("pagina").textContent = paginaAtual;
+};
+
+window.filtroausente = function () {
+  paginaAtual = 1;
+  ausente();
+  document.getElementById("pagina").textContent = paginaAtual;
+};
