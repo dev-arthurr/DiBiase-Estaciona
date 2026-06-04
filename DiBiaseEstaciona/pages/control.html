@@ -67,12 +67,7 @@
           <div class="fields">
             <div class="search_bar">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                type="text"
-                id="pesquisa"
-                onkeydown="if (event.key === 'Enter') pesquisar();"
-                placeholder="Buscar por placa..."
-              />
+              <input type="text" id="pesquisa" onkeydown="if (event.key === 'Enter') pesquisar()" placeholder="Buscar por placa..."/>
             </div>
             <div class="buttons">
               <button class="todos" id="todos" onclick="todos()">Todos</button>
@@ -97,9 +92,11 @@
               <tbody id="table-controle"></tbody>
             </table>
             <div class="pages">
+              <i class="fa-solid fa-arrow-left"></i>
               <button onclick="anterior()">Anterior</button>
               <span id="pagina">1</span>
               <button onclick="proxima()">Próxima</button>
+              <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
         </div>
