@@ -48,13 +48,13 @@
   border-radius: 8px;
 }
 
-.estacionado {
+.entrada {
   width: 110px;
   height: 44px;
   border-radius: 8px;
 }
 
-.ausente {
+.saida {
   width: 110px;
   height: 44px;
   border-radius: 8px;
