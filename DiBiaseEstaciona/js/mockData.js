@@ -63,6 +63,30 @@ const mockVeiculos = [
     modelo: "Jeep Renegade",
     status: "estacionado",
   },
+  {
+    id: 9,
+    placa: "SRT-0249",
+    proprietario: "Arthur Rodrigues",
+    matricula: "2025010",
+    modelo: "Fusca",
+    status: "ausente",
+  },
+  {
+    id: 10,
+    placa: "SRT-0798",
+    proprietario: "Gabriel Costa",
+    matricula: "2025202",
+    modelo: "Celta",
+    status: "estacionado",
+  },
+    {
+    id: 11,
+    placa: "SRT-0798",
+    proprietario: "Gabriel Costa",
+    matricula: "2025202",
+    modelo: "Celta",
+    status: "estacionado",
+  },
 ];
 
 const mockMovimentacoes = [
