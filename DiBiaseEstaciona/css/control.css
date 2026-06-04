@@ -12,6 +12,20 @@
   justify-content: center;
 }
 
+.controle-veiculos {
+  background: var(--color-bg-menu);
+  border-left: 5px solid var(--color-menu-border-left);
+}
+
+.controle-veiculos a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.menu:hover:not(.controle-veiculos) {
+  background: rgb(251, 254, 255);
+}
+
 .inner_content {
   display: flex;
   justify-content: center;
@@ -64,25 +78,27 @@ button {
   background: white;
   border: 1px solid #DCE8EC;
   cursor: pointer;
+  background-color: white;
+  border: 1px solid #dce8ec;
 }
 
 .ativo {
-    background-color: #00305F;
-    color: white;
+  background-color: #00305f;
+  color: white;
 }
 
-.search_bar{
+.search_bar {
   position: relative;
   width: 300px;
   border-radius: 8px;
 }
 
-.search_bar i{
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: gray;
+.search_bar i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
 }
 
 .search_bar input{
@@ -99,6 +115,10 @@ button {
   flex-direction: column;
   height: 680px;
   background: white;
+.search_bar input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border-radius: 8px;
 }
 
 table {
