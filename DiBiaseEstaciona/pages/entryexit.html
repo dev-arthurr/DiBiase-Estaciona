@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../css/entryexit.css" />
     <link rel="stylesheet" href="../css/components/navbar.css" />
     <link rel="stylesheet" href="../css/components/sidebar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>Entrada e saída</title>
   </head>
 
@@ -70,17 +74,26 @@
               />
             </div>
             <div class="buttons">
-              <button class="todos" id="todos" onclick="todos()">Todos</button>
-              <button class="entrada" id="entrada" onclick="entrada()">
-                Entrada
-              </button>
-              <button class="saida" id="saida" onclick="saida()">Saída</button>
+              <div class="table-buttons">
+                <button class="todos" id="todos" onclick="todos()">
+                  Todos
+                </button>
+                <button class="entrada" id="entrada" onclick="entrada()">
+                  Entrada
+                </button>
+                <button class="saida" id="saida" onclick="saida()">
+                  Saída
+                </button>
+              </div>
 
-              <button class="add" onclick="add()">Nova movimentação</button>
+              <div class="nova-mov">
+                <button class="add" onclick="add()">Nova movimentação</button>
+              </div>
             </div>
           </div>
+
           <div class="content_title">
-            <h2 class="titulo">movimentações de hoje</h2>
+            <h2 class="titulo">Movimentações de hoje</h2>
           </div>
           <table>
             <thead>
