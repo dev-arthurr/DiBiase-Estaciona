@@ -167,7 +167,7 @@ tbody tr:last-child td {
 
 .pill {
   padding: 4px 10px;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 12px;
   font-weight: 600;
 }
@@ -201,4 +201,38 @@ tbody tr:last-child td {
   border: none;
   color: #5a7280;
   font-size: 14px;
+}
+
+.acoes button {
+  border: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5A7280
+}
+
+.atualizar {
+  background: #FFEA00;
+}
+
+.excluir {
+  background: rgba(255,0,0,.2);
+}
+
+.popup {
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 555px;
+  height: 585px;
+  background: white; 
+  border-radius: 40px;
+}
+
+.popup_content {
+  justify-content: center;
+  
 }

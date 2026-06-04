@@ -25,6 +25,7 @@ window.todos = function () {
             <td class="matricula">${mov.matricula}</td>
             <td class="modelo">${mov.modelo}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td class="acoes"><button class="atualizar">ATUALIZAR</button> <button class="excluir">EXCLUIR</button></td>
         `;
     tbody.appendChild(tr);
   });
@@ -65,6 +66,7 @@ window.estacionado = function () {
             <td class="matricula">${mov.matricula}</td>
             <td class="modelo">${mov.modelo}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td class="acoes"><button class="atualizar">ATUALIZAR</button> <button class="excluir">EXCLUIR</button></td>
         `;
     tbody.appendChild(tr);
   });
@@ -83,12 +85,13 @@ window.estacionado = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
-  document.getElementById("exibion").innerHTML="Exibindo " + paginaAtual + "-" + paginaestacionada + " de " + mockVeiculos.length + " veículos";
+  document.getElementById("exibion").innerHTML="Exibindo " + paginaAtual + "-" + paginaestacionada + " de " + veiculosEstacionados.length + " veículos";
 };
 
 const veiculosAusente = mockVeiculos.filter(
   (veiculo) => veiculo.status === "ausente",
 );
+
 
 window.ausente = function () {
   ativarBotao("ausente");
@@ -107,6 +110,10 @@ window.ausente = function () {
             <td class="matricula">${mov.matricula}</td>
             <td class="modelo">${mov.modelo}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td class="acoes">
+            <button class="atualizar">ATUALIZAR</button>
+            <button class="excluir">EXCLUIR</button>
+            </td>
         `;
     tbody.appendChild(tr);
   });
@@ -124,7 +131,7 @@ window.ausente = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
-  document.getElementById("exibion").innerHTML="Exibindo " + paginaAtual + "-" + paginausente + " de " + mockVeiculos.length + " veículos";
+  document.getElementById("exibion").innerHTML="Exibindo " + paginaAtual + "-" + paginausente + " de " + veiculosAusente.length + " veículos";
 };
 
 window.pesquisar = function () {
@@ -146,6 +153,7 @@ window.pesquisar = function () {
             <td class="matricula">${mov.matricula}</td>
             <td class="modelo">${mov.modelo}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td class="acoes"><button>EDITAR</button> <button>EXCLUIR</button></td>
         `;
     tbody.appendChild(tr);
   });
@@ -176,3 +184,15 @@ window.filtroausente = function () {
   ausente();
   document.getElementById("pagina").textContent = paginaAtual;
 };
+
+  ativarBotao("todos");
+  todos();
+
+function abrirPopup() {
+  document.getElementById("popup").style.display = "block";
+}
+
+window.add = function() {
+  ativarBotao("add");
+  abrirPopup();
+}
