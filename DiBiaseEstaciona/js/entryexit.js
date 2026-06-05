@@ -1,4 +1,4 @@
-import { mockMovimentacoes } from "./mockData.js";
+import { mockMovimentacoes, mockVeiculos } from "./mockData.js";
 
 function ativarBotao(idBotao) {
   document.querySelectorAll("button").forEach((btn) => {
@@ -74,6 +74,14 @@ window.entrada = function () {
             <td><span class="pill pill-${mov.tipo}">${mov.tipo.toUpperCase()}</span></td>
             <td class="modelo">${mov.permanencia}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td>
+              <a href="${mov.foto}" target="_blank">
+              <img src="${mov.foto}" alt="Imagem ${mov.placa}" width="60" height="40"
+                style="object-fit: cover; border-radius: 4px; cursor: pointer;"
+                onerror="this.src='placeholder.png'"
+              />
+            </a>
+            </td>
         `;
     tbody.appendChild(tr);
   });
@@ -102,6 +110,14 @@ window.saida = function () {
             <td><span class="pill pill-${mov.tipo}">${mov.tipo.toUpperCase()}</span></td>
             <td class="modelo">${mov.permanencia}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td>
+              <a href="${mov.foto}" target="_blank">
+                <img src="${mov.foto}" alt="Imagem ${mov.placa}" width="60" height="40"
+                  style="object-fit: cover; border-radius: 4px; cursor: pointer;"
+                  onerror="this.src='placeholder.png'"
+                />
+              </a>
+            </td>
         `;
     tbody.appendChild(tr);
   });
@@ -124,7 +140,143 @@ window.pesquisar = function () {
             <td><span class="pill pill-${mov.tipo}">${mov.tipo.toUpperCase()}</span></td>
             <td class="modelo">${mov.permanencia}</td>
             <td><span class="pill pill-${mov.status}">${mov.status.toUpperCase()}</span></td>
+            <td>
+              <a href="${mov.foto}" target="_blank">
+                <img src="${mov.foto}" alt="Imagem ${mov.placa}" width="60" height="40"
+                  style="object-fit: cover; border-radius: 4px; cursor: pointer;"
+                  onerror="this.src='placeholder.png'"
+                />
+              </a>
+            </td>
         `;
     tbody.appendChild(tr);
   });
 };
+
+// MODAL
+let tipoSelecionado = "entrada";
+
+window.abrirModal = function () {
+  document.getElementById("modal-overlay").classList.add("aberto");
+  resetarModal();
+};
+
+window.fecharModal = function () {
+  document.getElementById("modal-overlay").classList.remove("aberto");
+};
+
+window.fecharModalFora = function (event) {
+  if (event.target.id === "modal-overlay") {
+    fecharModal();
+  }
+};
+
+window.selecionarTipo = function (tipo) {
+  tipoSelecionado = tipo;
+  const btnEntrada = document.getElementById("btn-entrada");
+  const btnSaida = document.getElementById("btn-saida");
+
+  btnEntrada.className = "tipo-btn";
+  btnSaida.className = "tipo-btn";
+
+  if (tipo === "entrada") {
+    btnEntrada.classList.add("tipo-ativo-entrada");
+  } else {
+    btnSaida.classList.add("tipo-ativo-saida");
+  }
+};
+
+window.previewFoto = function (input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      document.getElementById("preview-img").src = e.target.result;
+      document.getElementById("preview-container").style.display = "flex";
+      document.getElementById("upload-area").style.display = "none";
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+};
+
+window.removerFoto = function () {
+  document.getElementById("input-foto").value = "";
+  document.getElementById("preview-img").src = "";
+  document.getElementById("preview-container").style.display = "none";
+  document.getElementById("upload-area").style.display = "block";
+};
+
+window.registrarMovimentacao = function () {
+  const matricula = document.getElementById("input-matricula").value.trim();
+  const placa = document
+    .getElementById("input-placa")
+    .value.trim()
+    .toUpperCase();
+  const foto = document.getElementById("preview-img").src;
+
+  if (!matricula) {
+    alert("Preencha a matrícula.");
+    return;
+  }
+  if (!placa) {
+    alert("Preencha a placa.");
+    return;
+  }
+
+  // VERIFICA SE O CARRO ESTA CADASTRO
+  const placaExiste = mockVeiculos.some(
+    (mov) => mov.placa.toUpperCase() === placa.toUpperCase(),
+  );
+  if (!placaExiste) {
+    alert("Placa não encontrada.");
+    return;
+  }
+
+  // VERIFICA SE O CARRO ESTA ESTACIONADO
+  const carroEstacionado = mockVeiculos.find((mov) => {
+    return (
+      mov.placa.toUpperCase() === placa.toUpperCase() &&
+      mov.status === "estacionado"
+    );
+  });
+
+  // VERIFICA SE O CARRO ESTA AUSENTE
+  if (tipoSelecionado === "entrada") {
+    if (carroEstacionado) {
+      alert(`O veículo de placa: ${placa} já se encontra no estacionamento.`);
+      return;
+    }
+  }
+
+  // VERIFICA SE O CARRO ESTA ESTACIONADO PARA QUE POSSA REGISTRAR A SAIDA
+  if (tipoSelecionado !== "entrada") {
+    if (!carroEstacionado) {
+      alert("Esse carro não está estacionado. Não é possível registrar saída.");
+      return;
+    }
+  }
+
+  const agora = new Date();
+  const horario = `${String(agora.getHours()).padStart(2, "0")}:${String(agora.getMinutes()).padStart(2, "0")}`;
+
+  const novaMovimentacao = {
+    id: mockMovimentacoes.length + 1,
+    placa,
+    tipo: tipoSelecionado,
+    horario,
+    permanencia: null,
+    status: tipoSelecionado === "entrada" ? "estacionado" : "ausente",
+    foto: foto || null,
+  };
+
+  mockMovimentacoes.push(novaMovimentacao);
+
+  fecharModal();
+  todos(); // atualiza a tabela
+};
+
+function resetarModal() {
+  document.getElementById("input-matricula").value = "";
+  document.getElementById("input-placa").value = "";
+  removerFoto();
+  selecionarTipo("entrada");
+}

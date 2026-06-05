@@ -87,7 +87,9 @@
               </div>
 
               <div class="nova-mov">
-                <button class="add" onclick="add()">Nova movimentação</button>
+                <button class="add" onclick="abrirModal()">
+                  Nova movimentação
+                </button>
               </div>
             </div>
           </div>
@@ -113,6 +115,100 @@
           </div>
         </div>
       </main>
+    </div>
+
+    <!-- MODAL -->
+    <!-- Botão que abre o modal (já existe no seu HTML, só referência) -->
+    <!-- <button class="add" onclick="abrirModal()">Nova movimentação</button> -->
+
+    <!-- MODAL -->
+    <div
+      id="modal-overlay"
+      class="modal-overlay"
+      onclick="fecharModalFora(event)"
+    >
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title">Nova movimentação</h2>
+            <p class="modal-subtitle">Preencha os dados do veículo</p>
+          </div>
+          <button class="modal-close" onclick="fecharModal()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="tipo-toggle">
+          <button
+            id="btn-entrada"
+            class="tipo-btn tipo-ativo-entrada"
+            onclick="selecionarTipo('entrada')"
+          >
+            <i class="fa-solid fa-arrow-down"></i> Entrada
+          </button>
+          <button
+            id="btn-saida"
+            class="tipo-btn"
+            onclick="selecionarTipo('saida')"
+          >
+            <i class="fa-solid fa-arrow-up"></i> Saída
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="input-matricula">Matrícula</label>
+            <input type="text" id="input-matricula" placeholder="Ex: 2024001" />
+          </div>
+
+          <div class="form-group">
+            <label for="input-placa">Placa</label>
+            <input
+              type="text"
+              id="input-placa"
+              placeholder="Ex: ABC-1234"
+              style="text-transform: uppercase"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Foto da placa</label>
+            <div
+              id="upload-area"
+              class="upload-area"
+              onclick="document.getElementById('input-foto').click()"
+            >
+              <i class="fa-solid fa-camera"></i>
+              <p>Clique para adicionar foto</p>
+              <span>JPG, PNG até 5MB</span>
+            </div>
+            <input
+              type="file"
+              id="input-foto"
+              accept="image/*"
+              style="display: none"
+              onchange="previewFoto(this)"
+            />
+            <div
+              id="preview-container"
+              class="preview-container"
+              style="display: none"
+            >
+              <img id="preview-img" alt="Preview da placa" />
+              <button class="remove-foto" onclick="removerFoto()">
+                <i class="fa-solid fa-trash"></i> Remover foto
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+          <button class="btn-registrar" onclick="registrarMovimentacao()">
+            <i class="fa-solid fa-check"></i> Registrar
+          </button>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="../js/components.js"></script>
