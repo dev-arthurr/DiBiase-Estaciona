@@ -104,22 +104,55 @@
       </main>
     </div>
     <div class="popup" id="popup">
+      <button onclick="fechar()">fechar</button>
       <div class="popup_content">
         <div class="text">
-          <h3>Cadastrar Veículos</h3>
+          <h4>Cadastro Veículos</h4>
           <p>Insira as informações do veículos e do condutor</p>
         </div>
         <div class="campos">
-          <label for="nome">Nome do condutor</label><br>
-          <input type="text" name="nome" id="nome" placeholder="Digite o nome do condutor">
-          <br>
-          <label for="matricula">Matricula</label><br>
-          <input type="text" name="matricula" id="matricula">
-          <br>
-          <label for="placa">Placa</label><br>
-          <input type="text" name="placa" id="placa" placeholder="ABC-1234">
-          <br>
-          <button id="cadastrar">Cadastrar</button>
+          <div class="campo">
+            <label for="nome">Nome do condutor</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome do condutor">
+          </div>
+          <div class="campo">
+            <label for="matricula">Matricula</label>
+            <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do condutor">
+          </div>
+          <div class="campo">
+            <label for="placa">Placa</label>
+            <input type="text" name="placa" id="placa" placeholder="ABC-1234">
+          </div>
+          <div class="campo">
+            <label for="modelo">Modelo</label>
+            <input type="text" name="modelo" id="modelo" placeholder="Exemplo: Honda Civic">
+            <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
+        </div>
+      </div>
+      <div class="popupedit" id="popup-editar">
+      <button onclick="fechar()">fechar</button>
+      <div class="popup_content">
+        <div class="text">
+          <h4>Editar Veículos</h4>
+          <p>Insira as informações do veículos e do condutor</p>
+        </div>
+        <div class="campos">
+          <div class="campo">
+            <label for="nome">Nome do condutor</label>
+            <input type="text" name="nome" id="nome-edit" placeholder="Digite o nome do condutor">
+          </div>
+          <div class="campo">
+            <label for="matricula">Matricula</label>
+            <input type="text" name="matricula" id="matricula-edit" placeholder="Digite a matrícula do condutor">
+          </div>
+          <div class="campo">
+            <label for="placa">Placa</label>
+            <input type="text" name="placa" id="placa-edit" placeholder="ABC-1234">
+          </div>
+          <div class="campo">
+            <label for="modelo">Modelo</label>
+            <input type="text" name="modelo" id="modelo-edit" placeholder="Exemplo: Honda Civic">
+            <button id="cadastrar" onclick="editar()">editar</button>
         </div>
       </div>
     </div>
