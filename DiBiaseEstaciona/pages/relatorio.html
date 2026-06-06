@@ -62,69 +62,71 @@
             <div class="search_bar">
               <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input
-                  type="date"
-                  onkeydown="if (event.key === 'Enter') pesquisar();"
-                  placeholder="DD - MM - AAAA"/>
+                <input id="dataInicial" type="date" onchange="aplicarFiltros();" placeholder="DD - MM - AAAA" />
                 <label>Data Inicial</label>
               </div>
 
               <div class="search">
-                <select>
-                  <option>Periodos</option>
-                  <option>Manhã</option>
-                  <option>Tarde</option>
-                  <option>Noite</option>
+                <select id="periodo" aria-placeholder="Período" onchange="aplicarFiltros();">
+                  <option value="">Todos os períodos</option>
+                  <option value="manha">Manhã (06:00 - 12:00)</option>
+                  <option value="tarde">Tarde (12:00 - 18:00)</option>
+                  <option value="noite">Noite (18:00 - 06:00)</option>
                 </select>
+                <label>Período</label>
               </div>
 
               <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input
-                  type="date"
-                  onkeydown="if (event.key === 'Enter') pesquisar();"
-                  placeholder="DD - MM - AAAA"/>
+                <input id="dataFinal" type="date" onchange="aplicarFiltros();" placeholder="DD - MM - AAAA" />
                 <label>Data Final</label>
               </div>
 
               <div class="search">
-                <input type="text" placeholder="Buscar por placa" />
+                <input id="buscaPlaca" type="text" placeholder="Buscar por placa" onkeyup="aplicarFiltros();" />
               </div>
             </div>
 
             <div class="buttons">
-              <button class="todos" id="todos" onclick="todos()">Todos</button>
-              <button
-                class="estacionado"
-                id="estacionado"
-                onclick="estacionado()"
-              >
-                Estacionado
-              </button>
-              <button class="ausente" id="ausente" onclick="ausente()">
-                Ausente
-              </button>
+              <div class="filter-buttons">
+                <button class="todos" id="todos" onclick="todos()">
+                  Todos
+                </button>
+                <button
+                  class="estacionado"
+                  id="estacionado"
+                  onclick="estacionado()"
+                >
+                  Estacionado
+                </button>
+                <button class="ausente" id="ausente" onclick="ausente()">
+                  Ausente
+                </button>
+              </div>
 
-              <button class="add" onclick="add()">Nova movimentação</button>
+              <button class="add" onclick="add()">Gerar Relatório</button>
             </div>
           </div>
 
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>MOVIMENTAÇÕES</th>
-                <th>HORÁRIO DE REGISTRO</th>
-                <th>PLACA</th>
-                <th>PERMANÊCIA</th>
-              </tr>
-            </thead>
-            <tbody id="table-controle"></tbody>
-          </table>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>PLACA</th>
+                  <th>TIPO</th>
+                  <th>DATA DE REGISTRO</th>
+                  <th>PERMANÊCIA</th>
+                </tr>
+              </thead>
+              <tbody id="table-controle"></tbody>
+            </table>
+          </div>
         </div>
       </main>
     </div>
 
     <script type="module" src="../js/components.js"></script>
+    <script type="module" src="../js/relatorio.js"></script>
   </body>
 </html>
