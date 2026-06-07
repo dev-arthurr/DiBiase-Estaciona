@@ -228,7 +228,7 @@ tbody tr:last-child td {
   transform: translate(-50%, -50%);
   width: 555px;
   height: 585px;
-  background: gray; 
+  background: white; 
   border-radius: 20px;
 }
 
@@ -294,6 +294,11 @@ tbody tr:last-child td {
   transform: translate(-50%, -50%);
   width: 555px;
   height: 585px;
-  background: gray; 
+  background: white; 
   border-radius: 20px;
+}
+
+.fechar {
+  border: none;
+  margin-left: auto;
 }
