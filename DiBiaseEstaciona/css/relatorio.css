@@ -72,8 +72,8 @@
 
 .buttons {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1vh;
 }
 
 button {
@@ -101,31 +101,63 @@ button {
 }
 
 .search_bar input {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 30px;
 }
 
 .search {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .search input,
 .search select {
-    padding: 10px;
-    border: 1px solid #DCE8EC;
-    border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #dce8ec;
+  border-radius: 8px;
 }
 .search label {
-    white-space: nowrap;
-    color: #5A7280;
+  white-space: nowrap;
+  color: #5a7280;
+}
+
+.table-container {
+  width: 100%;
+  border: 1px solid var(--color-border-default);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pill {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.pill-entrada {
+  background: #d4edda;
+  color: #1a7a3a;
+}
+.pill-saida {
+  background: #f8d7da;
+  color: #842029;
+}
+.pill-estacionado {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+.pill-ausente {
+  background: #e2e3e5;
+  color: #383d41;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  background: white;
 }
 
 thead th {
@@ -137,6 +169,10 @@ thead th {
   text-align: left;
 }
 
+tbody {
+  background: white;
+}
+
 tbody tr {
   border-bottom: 1px solid var(--color-border-default);
 }
@@ -146,7 +182,7 @@ tbody tr:last-child {
 }
 
 tbody td {
-  padding: 14px 16px;
+  padding: 7px 8px;
   font-size: 16px;
   color: var(--color-primary);
 }
