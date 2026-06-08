@@ -1,6 +1,7 @@
 import { mockMovimentacoes } from "./mockData.js";
 
 let statusFiltroAtual = "";
+let movimentacoesAtual = [];
 
 function ativarBotao(idBotao) {
   document.querySelectorAll(".filter-buttons button").forEach((btn) => {
@@ -104,6 +105,7 @@ function aplicarFiltros() {
   }
 
   const movimentacoesOrdenadas = ordenarPorDataEHora(resultado);
+  movimentacoesAtual = movimentacoesOrdenadas;
   renderizarTabela(movimentacoesOrdenadas);
 }
 
@@ -151,6 +153,41 @@ window.ausente = function () {
 
 window.aplicarFiltros = aplicarFiltros;
 
+function exportarParaCSV() {
+  if (movimentacoesAtual.length === 0) {
+    alert("Nenhum registro para exportar. Aplique filtros e tente novamente.");
+    return;
+  }
+
+  const cabeçalho = ["ID", "Placa", "Tipo", "Data e Hora", "Permanência"];
+  const linhas = movimentacoesAtual.map((mov) => [
+    mov.id,
+    mov.placa,
+    mov.tipo,
+    mov.data + " " + mov.horario,
+    mov.permanencia || "-",
+  ]);
+
+  const conteudoCSV = [
+    cabeçalho.join(","),
+    ...linhas.map((l) => l.map((cell) => `"${cell}"`).join(",")),
+  ].join("\n");
+
+  const blob = new Blob([conteudoCSV], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "relatorio_movimentacoes_" + new Date().getTime() + ".csv";
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+window.exportarParaCSV = exportarParaCSV;
+
 window.addEventListener("DOMContentLoaded", () => {
   todos();
+  const relatorioBtn = document.getElementById("exportarCSV");
+  if (relatorioBtn) {
+    relatorioBtn.addEventListener("click", exportarParaCSV);
+  }
 });
