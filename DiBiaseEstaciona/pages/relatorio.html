@@ -62,12 +62,21 @@
             <div class="search_bar">
               <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input id="dataInicial" type="date" onchange="aplicarFiltros();" placeholder="DD - MM - AAAA" />
+                <input
+                  id="dataInicial"
+                  type="date"
+                  onchange="aplicarFiltros()"
+                  placeholder="DD - MM - AAAA"
+                />
                 <label>Data Inicial</label>
               </div>
 
               <div class="search">
-                <select id="periodo" aria-placeholder="Período" onchange="aplicarFiltros();">
+                <select
+                  id="periodo"
+                  aria-placeholder="Período"
+                  onchange="aplicarFiltros()"
+                >
                   <option value="">Todos os períodos</option>
                   <option value="manha">Manhã (06:00 - 12:00)</option>
                   <option value="tarde">Tarde (12:00 - 18:00)</option>
@@ -78,12 +87,22 @@
 
               <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input id="dataFinal" type="date" onchange="aplicarFiltros();" placeholder="DD - MM - AAAA" />
+                <input
+                  id="dataFinal"
+                  type="date"
+                  onchange="aplicarFiltros()"
+                  placeholder="DD - MM - AAAA"
+                />
                 <label>Data Final</label>
               </div>
 
               <div class="search">
-                <input id="buscaPlaca" type="text" placeholder="Buscar por placa" onkeyup="aplicarFiltros();" />
+                <input
+                  id="buscaPlaca"
+                  type="text"
+                  placeholder="Buscar por placa"
+                  onkeyup="aplicarFiltros()"
+                />
               </div>
             </div>
 
@@ -104,7 +123,7 @@
                 </button>
               </div>
 
-              <button class="add" onclick="add()">Gerar Relatório</button>
+              <button class="add" id="exportarCSV">Gerar Relatório</button>
             </div>
           </div>
 

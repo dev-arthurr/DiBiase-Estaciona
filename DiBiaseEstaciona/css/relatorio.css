@@ -5,6 +5,7 @@
 
 .content {
   width: 100%;
+  height: 100%;
   background: var(--color-bg);
 
   display: flex;
@@ -40,7 +41,6 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .todos {
@@ -62,18 +62,17 @@
 }
 
 .add {
-  width: 180px;
+  width: 100%;
   height: 44px;
   border-radius: 8px;
-  background-color: #25ba00;
+  background-color: #1d9e75;
   color: #ffffff;
-  margin-left: 77px;
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  gap: 15px;
 }
 
 button {
@@ -185,4 +184,203 @@ tbody td {
   padding: 7px 8px;
   font-size: 16px;
   color: var(--color-primary);
+}
+
+/* ============ RESPONSIVIDADE ============ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .inner_content {
+    width: 95%;
+    padding: 30px 0;
+  }
+
+  .fields {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .search_bar {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .buttons {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .add {
+    margin-left: 0;
+  }
+
+  tbody td {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  thead th {
+    padding: 12px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .inner_content {
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .fields {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search_bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .search input,
+  .search select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .search label {
+    font-size: 12px;
+  }
+
+  .buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .todos,
+  .estacionado,
+  .ausente {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 70px;
+  }
+
+  .add {
+    width: 100%;
+    height: 40px;
+    margin-left: 0;
+    font-size: 13px;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  thead th {
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+
+  tbody td {
+    padding: 5px 6px;
+    font-size: 12px;
+  }
+
+  .pill {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}
+
+/* Mobile pequeno (< 480px) */
+@media (max-width: 480px) {
+  .inner_content {
+    width: 100%;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .search_bar {
+    gap: 8px;
+  }
+
+  .search input,
+  .search select {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    gap: 5px;
+  }
+
+  .todos,
+  .estacionado,
+  .ausente,
+  .add {
+    width: 100%;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  thead th {
+    padding: 8px 4px;
+    font-size: 9px;
+  }
+
+  tbody td {
+    padding: 4px 4px;
+    font-size: 11px;
+  }
+
+  .pill {
+    padding: 2px 6px;
+    font-size: 9px;
+  }
 }
