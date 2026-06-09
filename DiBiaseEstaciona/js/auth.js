@@ -8,7 +8,7 @@ const mockUsers = [
     senha: "123456",
   },
   {
-    id: 5,
+    id: 2,
     matricula: "1",
     nome: "Arthur",
     email: "joao.silva@ugb.edu.br",
@@ -16,7 +16,7 @@ const mockUsers = [
     senha: "1",
   },
   {
-    id: 2,
+    id: 3,
     matricula: "0202",
     nome: "Maria Santos",
     email: "maria.santos@ugb.edu.br",
@@ -24,7 +24,7 @@ const mockUsers = [
     senha: "123456",
   },
   {
-    id: 3,
+    id: 4,
     matricula: "0303",
     nome: "Pedro Costa",
     email: "pedro.costa@ugb.edu.br",
@@ -32,7 +32,7 @@ const mockUsers = [
     senha: "123456",
   },
   {
-    id: 4,
+    id: 5,
     matricula: "0404",
     nome: "Ana Lima",
     email: "ana.lima@ugb.edu.br",
@@ -43,21 +43,26 @@ const mockUsers = [
 
 const form = document.querySelector("form");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const matricula = document.getElementById("loginMatricula").value;
-  const password = document.getElementById("loginSenha").value;
+    const matricula = document.getElementById("loginMatricula").value;
+    const password = document.getElementById("loginSenha").value;
 
-  const user = mockUsers.find((u) => u.matricula === matricula);
+    const user = mockUsers.find((u) => u.matricula === matricula);
 
-  if (user && user.senha === password) {
-    localStorage.setItem("token", "mock-token-123");
-    localStorage.setItem("role", user.role);
-    localStorage.setItem("nome", user.nome);
+    if (user && user.senha === password) {
+      localStorage.setItem("token", "mock-token-123");
+      localStorage.setItem("role", user.role);
+      localStorage.setItem("nome", user.nome);
 
-    window.location.replace("../pages/dashboard.html");
-  } else {
-    document.getElementById("erro-login").style.display = "block";
-  }
-});
+      window.location.replace("../pages/dashboard.html");
+    } else {
+      document.getElementById("erro-login").style.display = "block";
+    }
+  });
+};
+
+export { mockUsers };
+
