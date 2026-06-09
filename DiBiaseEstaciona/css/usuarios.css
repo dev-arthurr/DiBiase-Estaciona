@@ -127,3 +127,86 @@
 .table_container th{
     background: #F4F7F9;
 }
+
+.popup {
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 555px;
+  height: 585px;
+  background: white; 
+  border-radius: 20px;
+}
+
+.popup_content {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 555px;
+  height: 585px;
+  align-items: center;
+}
+
+.add {
+  background: #00305f;
+  color: white;
+}
+
+.text {
+  text-align: center;
+  padding: 10px;
+}
+
+.text p{
+  font-size: 14px;
+}
+
+.text h4 {
+  font-size: 22px;
+  font-family: sans-serif;
+}
+
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.campos input {
+  width: 400px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.campos button  {
+  border-radius: 8px;
+  width: 180px;
+  height: 44px;
+  text-align: center;
+  justify-content: center;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.popupedit{
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 555px;
+  height: 585px;
+  background: white; 
+  border-radius: 20px;
+}
+
+.fechar {
+  border: none;
+  margin-left: auto;
+}

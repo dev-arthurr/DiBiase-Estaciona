@@ -218,6 +218,7 @@ const novoVeiculo = {
 
 window.cadastrar = function () {
   mockVeiculos.push(novoVeiculo);
+  console.log(novoVeiculo);
   todos();
 }
 

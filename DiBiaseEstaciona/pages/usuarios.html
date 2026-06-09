@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="../css/usuarios.css" />
     <link rel="stylesheet" href="../css/components/navbar.css" />
     <link rel="stylesheet" href="../css/components/sidebar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <title>Gestão de Usuários</title>
 </head>
-<body>
 
+<body>
     <nav>
         <h1>DiBiase Estaciona</h1>
         <img src="../assets/images/logoUGB.png" class="navbar-logo">
@@ -63,28 +64,17 @@
                 </div>
             </div>
         </aside>
-        
         <div class="content">
             <div class="inner_content">
-
                 <div class="header_users">
-
                     <div class="search_container">
-                        <input
-                            type="text"
-                            class="search_input"
-                            placeholder="Buscar usuário"
-                        >
+                        <input type="text" class="search_input" placeholder="Buscar usuário">
                     </div>
-
-                    <button class="btn_create">
+                    <button class="btn_create" onclick="create()">
                         Cadastrar Usuário
                     </button>
-
                 </div>
-
                 <div class="table_container">
-
                     <table>
                         <thead>
                             <tr>
@@ -95,64 +85,62 @@
                                 <th>AÇÕES</th>
                             </tr>
                         </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <td>01</td>
-                                <td><strong>75462163</strong></td>
-                                <td>joao.silva@ugb.com.br</td>
-                                <td>Administrador</td>
-                                <td class="actions">
-                                    <button class="btn_update">ATUALIZAR</button>
-                                    <button class="btn_delete">DELETAR</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>02</td>
-                                <td><strong>657127127</strong></td>
-                                <td>douglas.luiz@ugb.com.br</td>
-                                <td>Operador</td>
-                                <td class="actions">
-                                    <button class="btn_update">ATUALIZAR</button>
-                                    <button class="btn_delete">DELETAR</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>03</td>
-                                <td><strong>84571234</strong></td>
-                                <td>lucas.paqueta@ugb.com.br</td>
-                                <td>Operador</td>
-                                <td class="actions">
-                                    <button class="btn_update">ATUALIZAR</button>
-                                    <button class="btn_delete">DELETAR</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>04</td>
-                                <td><strong>91234567</strong></td>
-                                <td>gonzalo.plata@ugb.com.br</td>
-                                <td>Administrador</td>
-                                <td class="actions">
-                                    <button class="btn_update">ATUALIZAR</button>
-                                    <button class="btn_delete">DELETAR</button>
-                                </td>
-                            </tr>
-
-                        </tbody>
+                        <tbody id="table-user"></tbody>
                     </table>
-
                 </div>
-
             </div>
         </div>
-
     </div>
-
+    <div class="popup" id="popup">
+        <button onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="popup_content">
+            <div class="text">
+                <h4>Cadastro Veículos</h4>
+                <p>Insira as informações do veículos e do condutor</p>
+            </div>
+            <div class="campos">
+                <div class="campo">
+                    <label for="email">Email do condutor</label>
+                    <input type="text" name="email" id="email" placeholder="Digite o email do condutor">
+                </div>
+                <div class="campo">
+                    <label for="matricula">Matricula</label>
+                    <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do condutor">
+                </div>
+                <div class="campo">
+                    <label for="role">Função</label>
+                    <input type="text" name="role" id="role" placeholder="">
+                    <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popupedit" id="popup-editar">
+        <button class="fechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="popup_content">
+            <div class="text">
+                <h4>Editar Veículos</h4>
+                <p>Insira as informações do veículos e do condutor</p>
+            </div>
+            <div class="campos">
+                <div class="campo">
+                    <label for="email">Email do condutor</label>
+                    <input type="text" name="nome" id="email-edit" placeholder="Digite o nome do condutor">
+                </div>
+                <div class="campo">
+                    <label for="matricula">Matricula</label>
+                    <input type="text" name="matricula" id="matricula-edit"
+                        placeholder="Digite a matrícula do condutor">
+                </div>
+                <div class="campo">
+                    <label for="role">Função</label>
+                    <input type="text" name="role" id="role-edit" placeholder="">
+                    <button id="editar" onclick="editar()">editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="module" src="../js/components.js"></script>
-
+    <script type="module" src="../js/user.js"></script>
 </body>
 </html>
