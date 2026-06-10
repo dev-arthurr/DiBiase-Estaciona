@@ -220,85 +220,289 @@ tbody tr:last-child td {
   background: rgba(255,0,0,.2);
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+}
+
 .popup {
-  display: none; 
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 555px;
-  height: 585px;
-  background: white; 
-  border-radius: 20px;
+  width: 460px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
 }
 
-.popup_content {
+.popup_header {
   display: flex;
-  flex-direction: column;
-  gap: 36px;
-  width: 555px;
-  height: 585px;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 28px;
 }
 
-.add {
-  background: #00305f;
-  color: white;
+.popup_title h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1A2B35;
 }
 
-.text {
-  text-align: center;
-  padding: 10px;
-}
-
-.text p{
+.popup_title p {
+  margin-top: 6px;
   font-size: 14px;
+  color: #5A7280;
 }
 
-.text h4 {
+
+.fechar {
+  border: none;
+  background: transparent;
   font-size: 22px;
-  font-family: sans-serif;
+  cursor: pointer;
+  color: #667085;
+  transition: 0.2s;
+}
+
+.fechar:hover {
+  color: #00305f;
+  transform: scale(1.1);
 }
 
 .campos {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-}
-
-.campos input {
-  width: 400px;
-  height: 48px;
-  border-radius: 8px;
-}
-
-.campos button {
-  border-radius: 8px;
-  width: 180px;
-  height: 44px;
-  text-align: center;
-  justify-content: center;
+  gap: 24px;
 }
 
 .campo {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
-.popupedit{
-  display: none; 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 555px;
-  height: 585px;
-  background: white; 
-  border-radius: 20px;
+.campo label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
 }
 
-.fechar {
+.campo input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #d0d5dd;
+  border-radius: 14px;
+  padding: 0 16px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.campo input::placeholder {
+  color: #98a2b3;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #00305f;
+  box-shadow: 0 0 0 3px rgba(0, 48, 95, 0.15);
+}
+
+
+#cadastrar {
+  width: 100%;
+  height: 44px;
   border: none;
-  margin-left: auto;
+  border-radius: 12px;
+  background: #00305f;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 8px;
+}
+
+#cadastrar:hover {
+  background: #00488f;
+  transform: translateY(-2px);
+}
+
+.add {
+  background: #00305F;
+  color: white;
+}
+
+.menu-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: none;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .inner_content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .content {
+    width: 100%;
+  }
+
+  .inner_content {
+    width: 95%;
+    padding: 20px 0;
+  }
+
+  .fields {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .search_bar {
+    width: 100%;
+  }
+
+  .search_bar input {
+    width: 100%;
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .todos,
+  .estacionado,
+  .ausente {
+    flex: 1;
+    min-width: 100px;
+    width: auto;
+  }
+
+  .add {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .table_container {
+    overflow-x: auto;
+    height: auto;
+  }
+
+  table {
+    min-width: 850px;
+  }
+
+  .acoes {
+    display: flex;
+    gap: 6px;
+  }
+
+  .popup {
+    width: 95%;
+    max-width: 420px;
+    padding: 24px;
+  }
+
+  .popup_title h2 {
+    font-size: 20px;
+  }
+
+  .popup_title p {
+    font-size: 13px;
+  }
+
+  .campo input {
+    height: 48px;
+  }
+
+  #cadastrar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .inner_content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .todos,
+  .estacionado,
+  .ausente,
+  .add {
+    width: 100%;
+    height: 50px !important;
+    min-height: 50px;
+    flex: none;
+  }
+
+  .popup {
+    width: calc(100% - 20px);
+    padding: 20px;
+  }
+
+  .popup_header {
+    margin-bottom: 20px;
+  }
+
+  .popup_title h2 {
+    font-size: 18px;
+  }
+
+  .popup_title p {
+    font-size: 12px;
+  }
+
+  .campos {
+    gap: 16px;
+  }
+
+  .campo label {
+    font-size: 13px;
+  }
+
+  .campo input {
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .fechar {
+    font-size: 20px;
+  }
+
+  .acoes {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .acoes button {
+    width: 100%;
+  }
 }

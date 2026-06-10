@@ -30,17 +30,21 @@ function user() {
 
 function abrirPopup() {
     document.getElementById("popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
 }
 function fecharPopup() {
     document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
 }
 
 function abrirPopupedit() {
     document.getElementById("popup-editar").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
 }
 
 function fecharPopupedit() {
     document.getElementById("popup-editar").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
 }
 
 window.create = function () {
@@ -92,3 +96,12 @@ window.editar = function () {
     userr.role = document.getElementById("role-edit").value;
     user();
 };
+
+window.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.getElementById("menu-icon");
+  const sidebar = document.querySelector(".sidebar");
+
+  menuIcon.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+  });
+});

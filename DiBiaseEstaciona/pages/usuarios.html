@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/usuarios.css" />
     <link rel="stylesheet" href="../css/components/navbar.css" />
     <link rel="stylesheet" href="../css/components/sidebar.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>Gestão de Usuários</title>
 </head>
 
@@ -14,6 +15,11 @@
     <nav>
         <h1>DiBiase Estaciona</h1>
         <img src="../assets/images/logoUGB.png" class="navbar-logo">
+        <img
+        src="../assets/images/menu-aberto.png"
+        class="menu-icon"
+        id="menu-icon"
+        />
     </nav>
 
     <div class="layout">
@@ -91,56 +97,59 @@
             </div>
         </div>
     </div>
+    <div class="overlay" id="overlay"></div>
     <div class="popup" id="popup">
-        <button onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
-        <div class="popup_content">
-            <div class="text">
-                <h4>Cadastro Veículos</h4>
+        <div class="popup_header">
+            <div class="popup_title">
+                <h2>Cadastro Veículos</h2>
                 <p>Insira as informações do veículos e do condutor</p>
             </div>
-            <div class="campos">
-                <div class="campo">
-                    <label for="email">Email do condutor</label>
-                    <input type="text" name="email" id="email" placeholder="Digite o email do condutor">
-                </div>
-                <div class="campo">
-                    <label for="matricula">Matricula</label>
-                    <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do condutor">
-                </div>
-                <div class="campo">
-                    <label for="role">Função</label>
-                    <input type="text" name="role" id="role" placeholder="">
-                    <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
-                </div>
+            <button class="fechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="campos">
+            <div class="campo">
+                <label for="email">Email do condutor</label>
+                <input type="text" name="email" id="email" placeholder="Digite o email do condutor">
             </div>
+            <div class="campo">
+                <label for="matricula">Matricula</label>
+                <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do condutor">
+            </div>
+            <div class="campo">
+                <label for="role">Função</label>
+                <input type="text" name="role" id="role" placeholder="Insira a função do condutor">
+            </div>
+            <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
         </div>
     </div>
-    <div class="popupedit" id="popup-editar">
-        <button class="fechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
-        <div class="popup_content">
-            <div class="text">
-                <h4>Editar Veículos</h4>
+    <div class="popup" id="popup-editar">
+        <div class="popup_header">
+            <div class="popup_title">
+                <h2>Editar Veículos</h2>
                 <p>Insira as informações do veículos e do condutor</p>
             </div>
-            <div class="campos">
-                <div class="campo">
-                    <label for="email">Email do condutor</label>
-                    <input type="text" name="nome" id="email-edit" placeholder="Digite o nome do condutor">
-                </div>
-                <div class="campo">
-                    <label for="matricula">Matricula</label>
-                    <input type="text" name="matricula" id="matricula-edit"
-                        placeholder="Digite a matrícula do condutor">
-                </div>
-                <div class="campo">
-                    <label for="role">Função</label>
-                    <input type="text" name="role" id="role-edit" placeholder="">
-                    <button id="editar" onclick="editar()">editar</button>
-                </div>
+            <button class="fechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="campos">
+            <div class="campo">
+                <label for="email">Email do condutor</label>
+                <input type="text" name="nome" id="email-edit" placeholder="Digite o nome do condutor">
             </div>
+            <div class="campo">
+                <label for="matricula">Matricula</label>
+                <input type="text" name="matricula" id="matricula-edit" placeholder="Digite a matrícula do condutor">
+            </div>
+            <div class="campo">
+                <label for="role">Função</label>
+                <input type="text" name="role" id="role-edit" placeholder="Insira a função do condutor">
+            </div>
+            <button id="cadastrar" onclick="editar()">Editar</button>
         </div>
     </div>
+
+
     <script type="module" src="../js/components.js"></script>
     <script type="module" src="../js/user.js"></script>
 </body>
+
 </html>

@@ -1,163 +1,169 @@
 <!doctype html>
 <html lang="pt-Br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/control.css" />
-    <link rel="stylesheet" href="../css/components/navbar.css" />
-    <link rel="stylesheet" href="../css/components/sidebar.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/control.css" />
+  <link rel="stylesheet" href="../css/components/navbar.css" />
+  <link rel="stylesheet" href="../css/components/sidebar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <nav>
+    <h1>DiBiase Estaciona</h1>
+    <img src="../assets/images/logoUGB.png" class="navbar-logo" />
+    <img
+        src="../assets/images/menu-aberto.png"
+        class="menu-icon"
+        id="menu-icon"
     />
-    <title>Document</title>
-  </head>
+  </nav>
 
-  <body>
-    <nav>
-      <h1>DiBiase Estaciona</h1>
-      <img src="../assets/images/logoUGB.png" class="navbar-logo" />
-    </nav>
-
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="top-side">
-          <div class="menu dashboard">
-            <a href="./dashboard.html" class="link-side text-dashboard">
-              Dashboard
-            </a>
-          </div>
-
-          <div class="menu controle-veiculos">
-            <a href="./control.html" class="link-side">
-              Controle de veiculos
-            </a>
-          </div>
-
-          <div class="menu entradas-saidas">
-            <a href="./entryexit.html" class="link-side"> Entradas e saídas </a>
-          </div>
-
-          <div class="menu relatorios">
-            <a href="./relatorio.html" class="link-side"> Relatórios </a>
-          </div>
-
-          <div class="menu gestao">
-            <a href="./usuarios.html" class="link-side"> Gestão de Usuários </a>
-          </div>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="top-side">
+        <div class="menu dashboard">
+          <a href="./dashboard.html" class="link-side text-dashboard">
+            Dashboard
+          </a>
         </div>
-        <div class="side-footer" id="side-footer">
-          <div class="img-side-footer">
-            <img src="../assets/images/userIcon.png" alt="" class="userLogo" />
-          </div>
 
-          <div class="user-sidebar">
-            <h3 id="userName"></h3>
-            <p id="UserRole"></p>
-          </div>
+        <div class="menu controle-veiculos">
+          <a href="./control.html" class="link-side">
+            Controle de veiculos
+          </a>
+        </div>
 
-          <div class="side-footer-menu" id="side-footer-menu">
-            <a href="" id="logout">Sair</a>
-          </div>
+        <div class="menu entradas-saidas">
+          <a href="./entryexit.html" class="link-side"> Entradas e saídas </a>
         </div>
-      </aside>
-      <main class="content">
-        <div class="inner_content">
-          <div class="fields">
-            <div class="search_bar">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" id="pesquisa" onkeydown="if (event.key === 'Enter') pesquisar()" placeholder="Buscar por placa..."/>
-            </div>
-            <div class="buttons">
-              <button class="todos" id="todos" onclick="filtrotodos()">Todos</button>
-              <button class="estacionado"id="estacionado"onclick="filtroestacionado()">Estacionado</button>
-              <button class="ausente" id="ausente" onclick="filtroausente()">Ausente</button>
-              <button class="add" id="add" onclick="add()">Cadastrar Veículos</button>
-            </div>
-          </div>
-          <div class="table_container">
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>PLACA</th>
-                  <th>PROPRIETARIO</th>
-                  <th>MATRICULA</th>
-                  <th>MODELO</th>
-                  <th>STATUS</th>
-                  <th>AÇÕES</th>
-                </tr>
-              </thead>
-              <tbody id="table-controle"></tbody>
-            </table>
-            <div class="pages">
-              <i class="fa-solid fa-arrow-left"></i>
-              <button onclick="anterior()">Anterior</button>
-              <span id="pagina">1</span>
-              <button onclick="proxima()">Próxima</button>
-              <i class="fa-solid fa-arrow-right"></i>
-              <span id="exibion"></span>
-            </div>
-          </div>
+
+        <div class="menu relatorios">
+          <a href="./relatorio.html" class="link-side"> Relatórios </a>
         </div>
-      </main>
-    </div>
-    <div class="popup" id="popup">
-      <button onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
-      <div class="popup_content">
-        <div class="text">
-          <h4>Cadastro Veículos</h4>
-          <p>Insira as informações do veículos e do condutor</p>
-        </div>
-        <div class="campos">
-          <div class="campo">
-            <label for="nome">Nome do condutor</label>
-            <input type="text" name="nome" id="nome" placeholder="Digite o nome do condutor">
-          </div>
-          <div class="campo">
-            <label for="matricula">Matricula</label>
-            <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do condutor">
-          </div>
-          <div class="campo">
-            <label for="placa">Placa</label>
-            <input type="text" name="placa" id="placa" placeholder="ABC-1234">
-          </div>
-          <div class="campo">
-            <label for="modelo">Modelo</label>
-            <input type="text" name="modelo" id="modelo" placeholder="Exemplo: Honda Civic">
-            <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
+
+        <div class="menu gestao">
+          <a href="./usuarios.html" class="link-side"> Gestão de Usuários </a>
         </div>
       </div>
-    <div class="popupedit" id="popup-editar">
+      <div class="side-footer" id="side-footer">
+        <div class="img-side-footer">
+          <img src="../assets/images/userIcon.png" alt="" class="userLogo" />
+        </div>
+
+        <div class="user-sidebar">
+          <h3 id="userName"></h3>
+          <p id="UserRole"></p>
+        </div>
+
+        <div class="side-footer-menu" id="side-footer-menu">
+          <a href="" id="logout">Sair</a>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="inner_content">
+        <div class="fields">
+          <div class="search_bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="pesquisa" onkeydown="if (event.key === 'Enter') pesquisar()"
+              placeholder="Buscar por placa..." />
+          </div>
+          <div class="buttons">
+            <button class="todos" id="todos" onclick="filtrotodos()">Todos</button>
+            <button class="estacionado" id="estacionado" onclick="filtroestacionado()">Estacionado</button>
+            <button class="ausente" id="ausente" onclick="filtroausente()">Ausente</button>
+            <button class="add" id="add" onclick="add()">Cadastrar Veículos</button>
+          </div>
+        </div>
+        <div class="table_container">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>PLACA</th>
+                <th>PROPRIETARIO</th>
+                <th>MATRICULA</th>
+                <th>MODELO</th>
+                <th>STATUS</th>
+                <th>AÇÕES</th>
+              </tr>
+            </thead>
+            <tbody id="table-controle"></tbody>
+          </table>
+          <div class="pages">
+            <button onclick="anterior()"><i class="fa-solid fa-arrow-left"></i> Anterior</button>
+            <span id="pagina">1</span>
+            <button onclick="proxima()">Próxima <i class="fa-solid fa-arrow-right"></i></button>
+            <span id="exibion"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <div class="popup_header">
+      <div class="popup_title">
+        <h2>Cadastro Veículos</h2>
+        <p>Insira as informações do veículo e do condutor</p>
+      </div>
       <button class="fechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
-      <div class="popup_content">
-        <div class="text">
-          <h4>Editar Veículos</h4>
-          <p>Insira as informações do veículos e do condutor</p>
-        </div>
-        <div class="campos">
-          <div class="campo">
-            <label for="nome">Nome do condutor</label>
-            <input type="text" name="nome" id="nome-edit" placeholder="Digite o nome do condutor">
-          </div>
-          <div class="campo">
-            <label for="matricula">Matricula</label>
-            <input type="text" name="matricula" id="matricula-edit" placeholder="Digite a matrícula do condutor">
-          </div>
-          <div class="campo">
-            <label for="placa">Placa</label>
-            <input type="text" name="placa" id="placa-edit" placeholder="ABC-1234">
-          </div>
-          <div class="campo">
-            <label for="modelo">Modelo</label>
-            <input type="text" name="modelo" id="modelo-edit" placeholder="Exemplo: Honda Civic">
-            <button id="cadastrar" onclick="editar()">editar</button>
-          </div>
-        </div>
-      </div>
     </div>
-    <script type="module" src="../js/control.js"></script>
-    <script type="module" src="../js/components.js"></script>
-  </body>
+    <div class="campos">
+      <div class="campo">
+        <label for="nome">Nome do condutor</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite o nome do condutor">
+      </div>
+      <div class="campo">
+        <label for="matricula">Matricula</label>
+        <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do condutor">
+      </div>
+      <div class="campo">
+        <label for="placa">Placa</label>
+        <input type="text" name="placa" id="placa" placeholder="ABC-1234">
+      </div>
+      <div class="campo">
+        <label for="modelo">Modelo</label>
+        <input type="text" name="modelo" id="modelo" placeholder="Exemplo: Honda Civic">
+      </div>
+      <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
+    </div>
+  </div>
+  <div class="popup" id="popup-editar">
+    <div class="popup_header">
+      <div class="popup_title">
+        <h2>Editar Veículos</h2>
+        <p>Insira as informações do veículo e do condutor</p>
+      </div>
+      <button class="fechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="campos">
+      <div class="campo">
+        <label for="nome">Nome do condutor</label>
+        <input type="text" name="nome" id="nome-edit" placeholder="Digite o nome do condutor">
+      </div>
+      <div class="campo">
+        <label for="matricula">Matricula</label>
+        <input type="text" name="matricula" id="matricula-edit" placeholder="Digite a matrícula do condutor">
+      </div>
+      <div class="campo">
+        <label for="placa">Placa</label>
+        <input type="text" name="placa" id="placa-edit" placeholder="ABC-1234">
+      </div>
+      <div class="campo">
+        <label for="modelo">Modelo</label>
+        <input type="text" name="modelo" id="modelo-edit" placeholder="Exemplo: Honda Civic">
+      </div>
+      <button id="cadastrar" onclick="editar()">Editar</button>
+    </div>
+  </div>
+  <script type="module" src="../js/control.js"></script>
+  <script type="module" src="../js/components.js"></script>
+</body>
+
 </html>
