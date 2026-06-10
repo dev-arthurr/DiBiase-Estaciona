@@ -1,3 +1,5 @@
+@import "../css/variables.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +7,10 @@
 }
 
 body {
-  height: 100vh;
   font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  background: var(--color-bg);
 }
 
 .layout {
