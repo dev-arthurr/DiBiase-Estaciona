@@ -8,6 +8,8 @@ function ativarBotao(idBotao) {
   document.getElementById(idBotao).classList.add("ativo");
 }
 
+const veiculosOrdenados = [...mockVeiculos].sort((a, b) => b.id - a.id);
+
 window.todos = function () {
   ativarBotao("todos");
   const tbody = document.getElementById("table-controle");
@@ -16,7 +18,7 @@ window.todos = function () {
   const inicio = (paginaAtual - 1) * itensPorPagina;
   const fim = inicio + itensPorPagina;
 
-  mockVeiculos.slice(inicio, fim).forEach((mov) => {
+  veiculosOrdenados.slice(inicio, fim).forEach((mov) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
             <td class="#">${mov.id}</td>
@@ -43,10 +45,17 @@ window.todos = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
-  document.getElementById("exibion").innerHTML = "Exibindo " + paginaAtual + "-" + paginatodos + " de " + mockVeiculos.length + " veículos";
+  document.getElementById("exibion").innerHTML =
+    "Exibindo " +
+    paginaAtual +
+    "-" +
+    paginatodos +
+    " de " +
+    mockVeiculos.length +
+    " veículos";
 };
 
-const veiculosEstacionados = mockVeiculos.filter(
+const veiculosEstacionados = veiculosOrdenados.filter(
   (veiculo) => veiculo.status === "estacionado",
 );
 
@@ -85,13 +94,19 @@ window.estacionado = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
-  document.getElementById("exibion").innerHTML = "Exibindo " + paginaAtual + "-" + paginaestacionada + " de " + veiculosEstacionados.length + " veículos";
+  document.getElementById("exibion").innerHTML =
+    "Exibindo " +
+    paginaAtual +
+    "-" +
+    paginaestacionada +
+    " de " +
+    veiculosEstacionados.length +
+    " veículos";
 };
 
-const veiculosAusente = mockVeiculos.filter(
+const veiculosAusente = veiculosOrdenados.filter(
   (veiculo) => veiculo.status === "ausente",
 );
-
 
 window.ausente = function () {
   ativarBotao("ausente");
@@ -131,7 +146,14 @@ window.ausente = function () {
       document.getElementById("pagina").textContent = paginaAtual;
     }
   };
-  document.getElementById("exibion").innerHTML = "Exibindo " + paginaAtual + "-" + paginausente + " de " + veiculosAusente.length + " veículos";
+  document.getElementById("exibion").innerHTML =
+    "Exibindo " +
+    paginaAtual +
+    "-" +
+    paginausente +
+    " de " +
+    veiculosAusente.length +
+    " veículos";
 };
 
 window.pesquisar = function () {
@@ -166,7 +188,6 @@ let paginaestacionada = Math.ceil(veiculosEstacionados.length / itensPorPagina);
 let paginausente = Math.ceil(veiculosAusente.length / itensPorPagina);
 let paginatodos = Math.ceil(mockVeiculos.length / itensPorPagina);
 
-
 window.filtrotodos = function () {
   paginaAtual = 1;
   todos();
@@ -198,11 +219,11 @@ function fecharPopup() {
 
 window.add = function () {
   abrirPopup();
-}
+};
 
 window.fechar = function () {
   fecharPopup();
-}
+};
 
 const ultimoId = mockVeiculos[mockVeiculos.length - 1].id;
 const novoId = ultimoId + 1;
@@ -220,27 +241,26 @@ window.cadastrar = function () {
   mockVeiculos.push(novoVeiculo);
   console.log(novoVeiculo);
   todos();
-}
+};
 
 function abrirPopupedit() {
   document.getElementById("popup-editar").style.display = "block";
-  popup.style.display = "block"
+  popup.style.display = "block";
 }
 let idEditando;
 
 window.atualizar = function (id) {
   idEditando = id;
-  const veiculo = mockVeiculos.find(v => v.id === id);
+  const veiculo = mockVeiculos.find((v) => v.id === id);
   document.getElementById("placa-edit").value = veiculo.placa;
   document.getElementById("nome-edit").value = veiculo.proprietario;
   document.getElementById("matricula-edit").value = veiculo.matricula;
   document.getElementById("modelo-edit").value = veiculo.modelo;
   abrirPopupedit();
-}
-
+};
 
 window.editar = function () {
-  const veiculo = mockVeiculos.find(v => v.id === idEditando);
+  const veiculo = mockVeiculos.find((v) => v.id === idEditando);
   veiculo.placa = document.getElementById("placa-edit").value;
   veiculo.proprietario = document.getElementById("nome-edit").value;
   veiculo.matricula = document.getElementById("matricula-edit").value;
@@ -249,7 +269,7 @@ window.editar = function () {
 };
 
 window.excluir = function (id) {
-  const apagar = mockVeiculos.find(v => v.id === id);
+  const apagar = mockVeiculos.find((v) => v.id === id);
   mockVeiculos.splice(apagar, 1);
   todos();
 };
