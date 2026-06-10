@@ -14,12 +14,12 @@ nav {
 }
 
 h1 {
-  font-size: clamp(40px, 1.5vw, 50px);
+  font-size: clamp(30px, 1.5vw, 50px);
   font-weight: 600;
 }
 
 .navbar-logo {
-  height: 80px;
+  height: 60px;
   width: auto;
 }
 
