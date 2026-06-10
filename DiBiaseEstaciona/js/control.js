@@ -211,11 +211,24 @@ todos();
 
 function abrirPopup() {
   document.getElementById("popup").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+}
+
+function abrirPopupedit() {
+  document.getElementById("popup-editar").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
 }
 
 function fecharPopup() {
   document.getElementById("popup").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
 }
+
+function fecharPopupedit() {
+    document.getElementById("popup-editar").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+
 
 window.add = function () {
   abrirPopup();
@@ -223,7 +236,8 @@ window.add = function () {
 
 window.fechar = function () {
   fecharPopup();
-};
+  fecharPopupedit();
+}
 
 const ultimoId = mockVeiculos[mockVeiculos.length - 1].id;
 const novoId = ultimoId + 1;
@@ -243,10 +257,6 @@ window.cadastrar = function () {
   todos();
 };
 
-function abrirPopupedit() {
-  document.getElementById("popup-editar").style.display = "block";
-  popup.style.display = "block";
-}
 let idEditando;
 
 window.atualizar = function (id) {
@@ -273,3 +283,12 @@ window.excluir = function (id) {
   mockVeiculos.splice(apagar, 1);
   todos();
 };
+
+window.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.getElementById("menu-icon");
+  const sidebar = document.querySelector(".sidebar");
+
+  menuIcon.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+  });
+});
