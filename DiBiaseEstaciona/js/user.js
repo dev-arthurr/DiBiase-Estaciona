@@ -68,6 +68,7 @@ window.cadastrar = function () {
     usuarios.push(novoUser);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     user();
+    fecharPopup(); 
 }
 user();
 
@@ -95,6 +96,7 @@ window.editar = function () {
     userr.email = document.getElementById("email-edit").value;
     userr.role = document.getElementById("role-edit").value;
     user();
+    fecharPopupedit();
 };
 
 window.addEventListener("DOMContentLoaded", () => {
