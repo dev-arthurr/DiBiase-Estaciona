@@ -2,6 +2,8 @@ import { mockMovimentacoes } from "./mockData.js";
 
 let statusFiltroAtual = "";
 let movimentacoesAtual = [];
+let paginaAtual = 1;
+let itensPorPagina = 10;
 
 function ativarBotao(idBotao) {
   document.querySelectorAll(".filter-buttons button").forEach((btn) => {
@@ -118,8 +120,9 @@ function renderizarTabela(movimentacoes) {
       '<tr><td colspan="5" style="text-align: center; padding: 20px;">Nenhum registro encontrado</td></tr>';
     return;
   }
-
-  movimentacoes.forEach((mov) => {
+  const inicio = (paginaAtual - 1) * itensPorPagina;
+  const fim = inicio + itensPorPagina;
+  movimentacoes.slice(inicio,fim).forEach((mov) => {
     const tr = document.createElement("tr");
     const permanencia = mov.permanencia === null ? "--" : mov.permanencia;
     tr.innerHTML = `
@@ -131,6 +134,23 @@ function renderizarTabela(movimentacoes) {
     `;
     tbody.appendChild(tr);
   });
+  const totalPaginas = Math.ceil(movimentacoes.length / itensPorPagina);
+
+  document.getElementById("pagina").textContent = paginaAtual;
+
+  window.proxima = function () {
+    if (paginaAtual < totalPaginas) {
+      paginaAtual++;
+      renderizarTabela(movimentacoes);
+    }
+  };
+
+  window.anterior = function () {
+    if (paginaAtual > 1) {
+      paginaAtual--;
+      renderizarTabela(movimentacoes);
+    }
+  };
 }
 
 window.todos = function () {
@@ -191,3 +211,5 @@ window.addEventListener("DOMContentLoaded", () => {
     relatorioBtn.addEventListener("click", exportarParaCSV);
   }
 });
+
+

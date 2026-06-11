@@ -348,9 +348,6 @@ tbody tr:last-child td {
   display: none;
 }
 
-/* ========================= */
-/* RESPONSIVO */
-/* ========================= */
 
 @media (max-width: 1024px) {
   .inner_content {
@@ -458,7 +455,7 @@ tbody tr:last-child td {
   .ausente,
   .add {
     width: 100%;
-    height: 50px !important;
+    height: 50px ;
     min-height: 50px;
     flex: none;
   }

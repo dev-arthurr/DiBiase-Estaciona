@@ -77,12 +77,15 @@ const veiculosEntradas = mockMovimentacoes
     return horaB * 60 + minB - (horaA * 60 + minA);
   });
 
+
 window.entrada = function () {
   ativarBotao("entrada");
   const tbody = document.getElementById("table-controle");
   tbody.innerHTML = "";
 
-  veiculosEntradas.forEach((mov) => {
+  const inicio = (paginaAtual - 1) * itensPorPagina;
+  const fim = inicio + itensPorPagina;
+  veiculosEntradas.slice(inicio,fim).forEach((mov) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
             <td class="#">${mov.id}</td>
@@ -102,6 +105,20 @@ window.entrada = function () {
         `;
     tbody.appendChild(tr);
   });
+  window.proxima = function() {
+    if (paginaAtual < paginaestacionada) {
+      paginaAtual++;
+      entrada();
+      document.getElementById("pagina").textContent = paginaAtual;
+    }
+  }
+  window.anterior = function() {
+    if (paginaAtual > 1) {
+      paginaAtual--;
+      entrada();
+      document.getElementById("pagina").textContent = paginaAtual;
+    }
+  }
 };
 
 const veiculosSaidas = mockMovimentacoes
@@ -117,8 +134,9 @@ window.saida = function () {
   ativarBotao("saida");
   const tbody = document.getElementById("table-controle");
   tbody.innerHTML = "";
-
-  veiculosSaidas.forEach((mov) => {
+  const inicio = (paginaAtual - 1) * itensPorPagina;
+  const fim = inicio + itensPorPagina;
+  veiculosSaidas.slice(inicio,fim).forEach((mov) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
             <td class="#">${mov.id}</td>
@@ -138,6 +156,20 @@ window.saida = function () {
         `;
     tbody.appendChild(tr);
   });
+  window.proxima = function() {
+    if (paginaAtual < paginausente) {
+      paginaAtual++;
+      saida();
+      document.getElementById("pagina").textContent = paginaAtual;
+    }
+  }
+  window.anterior = function() {
+    if (paginaAtual > 1) {
+      paginaAtual--;
+      saida();
+      document.getElementById("pagina").textContent = paginaAtual;
+    }
+  }
 };
 
 window.pesquisar = function () {
@@ -170,7 +202,7 @@ window.pesquisar = function () {
   });
 };
 
-// MODAL
+
 let tipoSelecionado = "entrada";
 
 window.abrirModal = function () {
@@ -239,7 +271,6 @@ window.registrarMovimentacao = function () {
     return;
   }
 
-  // VERIFICA SE O CARRO ESTA CADASTRO
   const placaExiste = mockVeiculos.some(
     (mov) => mov.placa.toUpperCase() === placa.toUpperCase(),
   );
@@ -248,7 +279,6 @@ window.registrarMovimentacao = function () {
     return;
   }
 
-  // VERIFICA SE O CARRO ESTA ESTACIONADO
   const carroEstacionado = mockVeiculos.find((mov) => {
     return (
       mov.placa.toUpperCase() === placa.toUpperCase() &&
@@ -256,7 +286,6 @@ window.registrarMovimentacao = function () {
     );
   });
 
-  // VERIFICA SE O CARRO ESTA AUSENTE
   if (tipoSelecionado === "entrada") {
     if (carroEstacionado) {
       alert(`O veículo de placa: ${placa} já se encontra no estacionamento.`);
@@ -264,7 +293,6 @@ window.registrarMovimentacao = function () {
     }
   }
 
-  // VERIFICA SE O CARRO ESTA ESTACIONADO PARA QUE POSSA REGISTRAR A SAIDA
   if (tipoSelecionado !== "entrada") {
     if (!carroEstacionado) {
       alert("Esse carro não está estacionado. Não é possível registrar saída.");
@@ -301,4 +329,7 @@ function resetarModal() {
 let paginaAtual = 1;
 let itensPorPagina = 10;
 let paginatodas = Math.ceil(mockMovimentacoes.length/itensPorPagina);
+let paginaestacionada = Math.ceil(veiculosEntradas.length / itensPorPagina);
+let paginausente = Math.ceil(veiculosSaidas.length / itensPorPagina);
+
 
