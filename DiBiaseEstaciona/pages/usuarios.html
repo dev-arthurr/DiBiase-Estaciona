@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+    <script>
+        if (!localStorage.getItem('token')) {
+            window.location.replace('../pages/login.html')
+        }   
+        if (localStorage.getItem('role') !== 'admin') {
+            window.location.replace('../pages/dashboard.html')
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/usuarios.css" />
@@ -23,7 +31,7 @@
     </nav>
 
     <div class="layout">
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="top-side">
                 <div class="menu dashboard">
                     <a href="./dashboard.html" class="link-side">
@@ -49,7 +57,7 @@
                     </a>
                 </div>
 
-                <div class="menu gestao">
+                <div class="menu gestao" id="menu-usuarios">
                     <a href="./usuarios.html" class="link-side">
                         Gestão de Usuários
                     </a>
@@ -101,23 +109,26 @@
     <div class="popup" id="popup">
         <div class="popup_header">
             <div class="popup_title">
-                <h2>Cadastro Veículos</h2>
-                <p>Insira as informações do veículos e do condutor</p>
+                <h2>Cadastrar usuário</h2>
+                <p>Insira as informações do usuário</p>
             </div>
             <button class="fechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="campos">
             <div class="campo">
-                <label for="email">Email do condutor</label>
-                <input type="text" name="email" id="email" placeholder="Digite o email do condutor">
+                <label for="email">Email do usuário</label>
+                <input type="text" name="email" id="email" placeholder="Digite o email do usuário">
             </div>
             <div class="campo">
                 <label for="matricula">Matricula</label>
-                <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do condutor">
+                <input type="text" name="matricula" id="matricula" placeholder="Digite a matrícula do usuário">
             </div>
             <div class="campo">
                 <label for="role">Função</label>
-                <input type="text" name="role" id="role" placeholder="Insira a função do condutor">
+                 <select name="role" id="role">
+                    <option value="colaborador">Colaborador</option>
+                    <option value="admin">Administrador</option>
+                 </select>
             </div>
             <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
         </div>
@@ -141,14 +152,17 @@
             </div>
             <div class="campo">
                 <label for="role">Função</label>
-                <input type="text" name="role" id="role-edit" placeholder="Insira a função do condutor">
+                 <select name="role" id="role-edit">
+                    <option value="colaborador">Colaborador</option>
+                    <option value="admin">Administrador</option>
+                 </select>
             </div>
             <button id="cadastrar" onclick="editar()">Editar</button>
         </div>
     </div>
 
 
-    <script type="module" src="../js/components.js"></script>
+    <script src="../js/components.js"></script>
     <script type="module" src="../js/user.js"></script>
 </body>
 
