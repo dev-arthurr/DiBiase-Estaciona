@@ -190,6 +190,16 @@ const mockMovimentacoes = [
     status: "ausente",
     foto: "../assets/images/placa-carro.jpg",
   },
+  {
+    id: 11,
+    placa: "STU-6789",
+    tipo: "saida",
+    data: "06/03/2026",
+    horario: "14:30",
+    permanencia: "1h 20min",
+    status: "ausente",
+    foto: "../assets/images/placa-carro.jpg",
+  },
 ];
 
 const mockUsuarios = [

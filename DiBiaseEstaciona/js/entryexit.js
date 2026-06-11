@@ -25,7 +25,10 @@ window.todos = function () {
   const tbody = document.getElementById("table-controle");
   tbody.innerHTML = "";
 
-  mockMovimentacoes.forEach((mov) => {
+  const inicio = (paginaAtual - 1) * itensPorPagina;
+  const fim = inicio + itensPorPagina;
+
+  mockMovimentacoes.slice(inicio,fim).forEach((mov) => {
     const tr = document.createElement("tr");
     if (mov.permanencia === null) {
       mov.permanencia = "--";
@@ -49,6 +52,20 @@ window.todos = function () {
         `;
     tbody.appendChild(tr);
   });
+  window.proxima = function() {
+    if (paginaAtual < paginatodas) {
+      paginaAtual++;
+      todos();
+      document.getElementById("pagina").textContent = paginaAtual;
+    }
+  }
+  window.anterior = function() {
+    if (paginaAtual > 1) {
+      paginaAtual--;
+      todos();
+      document.getElementById("pagina").textContent = paginaAtual;
+    }
+  }
 };
 
 const veiculosEntradas = mockMovimentacoes
@@ -271,7 +288,7 @@ window.registrarMovimentacao = function () {
   mockMovimentacoes.push(novaMovimentacao);
 
   fecharModal();
-  todos(); // atualiza a tabela
+  todos(); 
 };
 
 function resetarModal() {
@@ -280,3 +297,8 @@ function resetarModal() {
   removerFoto();
   selecionarTipo("entrada");
 }
+
+let paginaAtual = 1;
+let itensPorPagina = 10;
+let paginatodas = Math.ceil(mockMovimentacoes.length/itensPorPagina);
+
