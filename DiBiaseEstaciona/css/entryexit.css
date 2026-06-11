@@ -119,10 +119,12 @@ button {
   width: 100%;
   border: 1px solid var(--color-border-default);
   border-radius: 10px;
+  height: 680px;
   display: flex;
   flex-direction: column;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  background: white;
 }
 
 table {
@@ -189,6 +191,21 @@ tbody td {
   justify-content: flex-start;
   text-align: left;
   width: 100%;
+}
+
+.pages {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  padding: 14px 16px;
+  color: #5a7280;
+  gap: 10px;
+}
+
+.pages button {
+  border: none;
+  color: #5a7280;
+  font-size: 14px;
 }
 
 .content_title h2 {

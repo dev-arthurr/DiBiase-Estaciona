@@ -17,7 +17,7 @@ window.todos = function () {
 
   const inicio = (paginaAtual - 1) * itensPorPagina;
   const fim = inicio + itensPorPagina;
-
+  const veiculosOrdenados = [...mockVeiculos].sort((a, b) => b.id - a.id);
   veiculosOrdenados.slice(inicio, fim).forEach((mov) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
@@ -239,21 +239,21 @@ window.fechar = function () {
   fecharPopupedit();
 }
 
-const ultimoId = mockVeiculos[mockVeiculos.length - 1].id;
-const novoId = ultimoId + 1;
 
-const novoVeiculo = {
+window.cadastrar = function () {
+  const ultimoId = mockVeiculos[mockVeiculos.length - 1].id;
+  const novoId = ultimoId + 1;
+  const novoVeiculo = {
   id: novoId,
   placa: document.getElementById("placa").value,
   proprietario: document.getElementById("nome").value,
   matricula: document.getElementById("matricula").value,
   modelo: document.getElementById("modelo").value,
   status: "ausente",
-};
-
-window.cadastrar = function () {
-  mockVeiculos.push(novoVeiculo);
+  };
   console.log(novoVeiculo);
+  console.log(mockVeiculos.length)
+  mockVeiculos.push(novoVeiculo);
   todos();
 };
 
@@ -279,8 +279,8 @@ window.editar = function () {
 };
 
 window.excluir = function (id) {
-  const apagar = mockVeiculos.find((v) => v.id === id);
-  mockVeiculos.splice(apagar, 1);
+  const indice = mockVeiculos.findIndex((v) => v.id === id);
+  mockVeiculos.splice(indice, 1);
   todos();
 };
 
